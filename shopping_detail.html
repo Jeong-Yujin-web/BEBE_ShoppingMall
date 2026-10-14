@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BEBE</title>
+
+  <link rel="icon" type="image/png" href="./images/R2.png">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/sub.css">
+  <link rel="stylesheet" href="./css/detail.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap" rel="stylesheet">
+  <!-- jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!-- js -->
+  <script type="module" src="./js/detail.js" defer></script>
+  <script type="module" src="./js/header_footer.js"></script>
+  <script type="module" src="./js/popup.js"></script>
+  <script>
+    $(function () {
+
+      const btnOpen = $('.gnb .btn_open');
+      const btnClose = $('.gnb .btn_close');
+      const downMenu = $('.gnb .gnb_menu_full_outer');
+      btnOpen.click(function () {
+        downMenu.stop().animate({
+          height: 420
+        }, 200);
+        btnOpen.css('display', 'none');
+        btnClose.css('display', 'block');
+      });
+      btnClose.click(function () {
+        downMenu.stop().animate({
+          height: 0
+        }, 200);
+        btnOpen.css('display', 'block');
+        btnClose.css('display', 'none');
+      });//gnb_drop_down
+
+      const shoppingOpen = $('.shopping_open');
+      const shoppingClose = $('.shopping_close');
+      const shoppingPopup = $('.shopping_popup_outer');
+
+      shoppingOpen.click(function () {
+        shoppingPopup.fadeIn(200);
+      });
+      shoppingClose.click(function () {
+        shoppingPopup.fadeOut(200);
+      });
+
+      const aiOpen = $('.ai_popup_open');
+      const aiClose = $('.ai_popup_close');
+      const aiPopup = $('.ai_popup_outer');
+
+      aiOpen.click(function () {
+        aiPopup.fadeIn(200);
+      });
+      aiClose.click(function () {
+        aiPopup.fadeOut(200);
+      });
+
+      const searchOpen = $('.search_popup_open');
+      const searchClose = $('.search_popup_close');
+      const searchPopup = $('.search_popup_outer');
+
+      searchOpen.click(function () {
+        searchPopup.fadeIn(200);
+      });
+      searchClose.click(function () {
+        searchPopup.fadeOut(200);
+      });
+      //------header--------//
+      const btn = $('.wrap .filter p')
+      btn.on("click", function () {
+        $('.option').slideToggle(300).css('display', 'block');
+      });
+      //------sub_filter_toggle--------//
+      const info_tab = $('.label_box label');
+      const info_sheet = $('.info_box_outer>div');
+
+      info_tab.click(function () {
+        let index = $(this).index();
+        info_tab.removeClass('on_tab');
+        $(this).addClass('on_tab');
+        info_sheet.removeClass('on_sheet');
+        info_sheet.eq(index).addClass('on_sheet');
+      });
+    });
+  </script>
+  <style>
+    /* ----------default_setting----------- */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      color: black;
+      text-decoration: none;
+    }
+
+    /* --------------------------  transition-------------------------- */
+  </style>
+</head>
+
+<body>
+  <header class="header" id="top">
+    <div class="header_event">
+      <p><a href="#!">회원가입시 최대 10,000원 할인</a></p>
+    </div>
+    <section class="header_inner">
+      <div class="header_utility">
+        <p>로그인</p>
+        <p>회원가입</p>
+        <p>커뮤니티</p>
+      </div>
+      <div class="header_logo">
+        <a href="./index.html"><img src="./images/logo_header.png" alt="로고_헤더"></a>
+      </div>
+      <div class="header_usermenu">
+        <a href="#!" class="shopping_open"><i class="fa-solid fa-bag-shopping"></i></a>
+        <a href="#!"><i class="fa-regular fa-user"></i></a>
+        <a href="#!" class="search_popup_open"><i class="fa-solid fa-magnifying-glass"></i></a>
+      </div>
+    </section>
+  </header>
+  <nav class="gnb mb">
+    <div class="gnb_menu">
+      <a href="#!"><i class="fa-solid fa-bars btn_open"></i></a>
+      <a href="#!"><i class="fa-solid fa-x btn_close"></i></a>
+      <p><a href="#!">신상</a></p>
+      <p class="touch"><a href="./shopping_mall_sub.html">인기</a></p>
+      <p><a href="#!">영아</a></p>
+      <p><a href="#!">유아</a></p>
+      <p><a href="#!">신발</a></p>
+      <p><a href="#!">악세서리</a></p>
+      <p><a href="#!">육아템</a></p>
+    </div>
+    <div class="gnb_menu_full_outer">
+      <div class="gnb_menu_full">
+        <a href="#!"><i class="fa-solid fa-bars"></i></a>
+        <ul class="menu_full02">
+          <li><a href="#!">상의</a></li>
+          <li><a href="">하의</a></li>
+          <li><a href="#!">상하의</a></li>
+          <li><a href="#!">아우터</a></li>
+          <li><a href="#!">실내복</a></li>
+          <li><a href="#!">신발</a></li>
+          <li><a href="#!">악세서리</a></li>
+        </ul>
+        <ul class="menu_full03">
+          <li><a href="#!">상의</a></li>
+          <li><a href="">하의</a></li>
+          <li><a href="#!">상하의</a></li>
+          <li><a href="#!">아우터</a></li>
+          <li><a href="#!">실내복</a></li>
+          <li><a href="#!">신발</a></li>
+          <li><a href="#!">악세서리</a></li>
+        </ul>
+        <ul class="menu_full04">
+          <li><a href="#!">0-2세 추천</a></li>
+          <li><a href="#!">집콕룩</a></li>
+          <li><a href="#!">외출룩</a></li>
+          <li><a href="#!">피부민감용</a></li>
+        </ul>
+        <ul class="menu_full05">
+          <li><a href="#!">3-5세 추천</a></li>
+          <li><a href="#!">등원룩</a></li>
+          <li><a href="#!">활동룩</a></li>
+          <li><a href="#!">데일리룩</a></li>
+        </ul>
+        <ul class="menu_full06">
+          <li><a href="#!">운동화</a></li>
+          <li><a href="#!">구두</a></li>
+          <li><a href="#!">실내화</a></li>
+          <li><a href="#!">샌들</a></li>
+          <li><a href="#!">장화</a></li>
+          <li><a href="#!">아쿠아슈즈</a></li>
+          <li><a href="#!">젤리슈즈</a></li>
+          <li><a href="#!">부츠</a></li>
+        </ul>
+        <ul class="menu_full07">
+          <li><a href="#!">모자</a></li>
+          <li><a href="#!">헤어</a></li>
+          <li><a href="#!">양말</a></li>
+          <li><a href="#!">가방</a></li>
+          <li><a href="#!">장갑</a></li>
+          <li><a href="#!">목도리</a></li>
+        </ul>
+        <!-- <div class="line"></div> -->
+        <ul class="menu_full08">
+          <li><a href="#!">수유 용품</a></li>
+          <li><a href="#!">목욕 용품</a></li>
+          <li><a href="#!">속겉싸개</a></li>
+          <li><a href="#!">아기띠</a></li>
+          <li><a href="#!">턱받이</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- ----------detail_product--------- -->
+  <container class="detail_product_outer">
+    <section class="detail_product">
+      <div class="detail_product_left">
+        <input type="radio" name="tab" id="tab01" checked>
+        <input type="radio" name="tab" id="tab02">
+        <input type="radio" name="tab" id="tab03">
+        <input type="radio" name="tab" id="tab04">
+        <div class="detail_image">
+          <label for="tab01"><img src="./images/detail01.jpg" alt="디테일01"></label>
+          <label for="tab02"><img src="./images/detail02.jpg" alt="디테일02"></label>
+          <label for="tab03"><img src="./images/detail03.jpg" alt="디테일03"></label>
+          <label for="tab04"><img src="./images/detail04.jpg" alt="디테일04"></label>
+          <label for="tab01"><img src="./images/detail01.jpg" alt="디테일01"></label>
+          <label for="tab02"><img src="./images/detail02.jpg" alt="디테일02"></label>
+          <label for="tab03"><img src="./images/detail03.jpg" alt="디테일03"></label>
+        </div>
+        <div class="detail_image_box">
+          <div class="detail_image_box01"><img src="./images/detail01_01.jpg" alt="디테일01"></div>
+          <div class="detail_image_box02"><img src="./images/detail02_02.jpg" alt="디테일01"></div>
+          <div class="detail_image_box03"><img src="./images/detail03_03.jpg" alt="디테일01"></div>
+          <div class="detail_image_box04"><img src="./images/detail04_04.jpg" alt="디테일01"></div>
+        </div>
+      </div>
+      <div class="detail_right">
+        <div class="detail_right01">
+          <div class="detail_right011">
+            <p>DREAM-SKY</p>
+            <p>판매가 58,000원</p>
+          </div>
+          <div class="detail_right012">
+            <span><a href="#!"><i class="fa-regular fa-heart"></i></a></span>
+            <span><a href="#!"><i class="fa-solid fa-bag-shopping"></i></a></span>
+            <span><a href="#!"><i class="fa-solid fa-share-nodes"></i></a></span>
+          </div>
+        </div>
+        <div class="detail_right02">
+          <span>색상</span>
+          <p class="white_F2EDED"></p>
+          <p class="skyblue_83D6FF"></p>
+        </div>
+        <div class="detail_right03">
+          <span>사이즈</span>
+          <p>100</p>
+          <p>110</p>
+          <p>120</p>
+          <p>130</p>
+          <p>140</p>
+        </div>
+        <div class="detail_right04">
+          <span>택배사 : 우체국 택배 15만원 이상 구매 시 무료배송</span>
+        </div>
+        <div class="detail_right05">
+          <span>상품 수량</span>
+          <span><i class="fa-solid fa-minus"></i>0<i class="fa-solid fa-plus"></i></span>
+        </div>
+
+        <input type="checkbox" id="coupon">
+        <div class="detail_right06">
+          <label for="coupon">쿠폰 다운로드</label>
+          <div class="detail_right066">
+            <button>전체쿠폰 받기</button>
+            <label for="coupon"><i class="fa-solid fa-chevron-down"></i></label>
+          </div>
+        </div>
+        <div class="right06_box">
+          <div class="right06_box01">
+            <span>멤버십 결제 시 5% 할인 쿠폰</span>
+            <button>쿠폰 받기</button>
+          </div>
+          <div class="right06_box02">
+            <span>멤버십 결제 시 5% 적립 쿠폰</span>
+            <button>쿠폰 받기</button>
+          </div>
+        </div>
+
+        <div class="detail_right07">
+          <span>총 상품 금액</span>
+          <span>49,900(원)</span>
+          <button>구매하기</button>
+        </div>
+        <div class="detail_right08">
+          <button>Buy with <i class="fa-brands fa-apple"></i>Pay</button>
+          <button>Buy with N Pay</button>
+          <button>Buy with Toss</button>
+        </div>
+      </div>
+    </section>
+  </container>
+  <!-- ----------anology_product--------- -->
+  <section class="anology_item">
+    <div class="title_outer">
+      <p class="title">
+        <a href="#!">유사 추천 상품</a>
+      </p>
+      <p><a href="#!"><img src="./images/more.jpg" alt="더보기"></a></p>
+    </div>
+    <div class="baby_item_product">
+      <div class="baby_item01">
+        <a href="#!">
+          <img src="./images/analogy01.jpg" alt="유사01">
+        </a>
+        <div class="baby_item01_info">
+          <p>블루벨 원피스</p>
+          <p class="product_disprice"><a href="#!">49,900원</a></p>
+          <p class="price">39,900원</p>
+          <p><a href="#!">바로구매</a></p>
+          <div class="shop_btn">
+            <p><a href="#!"><i class="fa-regular fa-heart"></i></a></p>
+            <p><a href="#!"><i class="fa-solid fa-bag-shopping"></i></a></p>
+          </div>
+        </div>
+      </div>
+      <div class="baby_item02">
+        <a href="#!"><img src="./images/analogy02.jpg" alt="유사02"></a>
+        <div class="baby_item02_info">
+          <p>공주 젤리 슈즈</p>
+          <p class="product_disprice"><a href="#!">39,900원</a></p>
+          <p class="price">34,900원</p>
+          <p><a href="#!">바로구매</a></p>
+          <div class="shop_btn">
+            <p><a href="#!"><i class="fa-regular fa-heart"></i></a></p>
+            <p><a href="#!"><i class="fa-solid fa-bag-shopping"></i></a></p>
+          </div>
+        </div>
+      </div>
+      <div class="baby_item03">
+        <a href="#!"><img src="./images/analogy03.jpg" alt="유사03"></a>
+        <div class="baby_item03_info">
+          <p>블루리본 레이스 원피스</p>
+          <p class="product_disprice"><a href="#!">39,900원</a></p>
+          <p class="price">29,900원</p>
+          <p><a href="#!">바로구매</a></p>
+          <div class="shop_btn">
+            <p><a href="#!"><i class="fa-regular fa-heart"></i></a></p>
+            <p><a href="#!"><i class="fa-solid fa-bag-shopping"></i></a></p>
+          </div>
+        </div>
+      </div>
+      <div class="baby_item04">
+        <a href="#!"><img src="./images/analogy04.jpg" alt="유사04"></a>
+        <div class="baby_item04_info">
+          <p>구름 레이스 원피스</p>
+          <p class="product_disprice"><a href="#!">39,900원</a></p>
+          <p class="price">29,900원</p>
+          <p><a href="#!">바로구매</a></p>
+          <div class="shop_btn">
+            <p><a href="#!"><i class="fa-regular fa-heart"></i></a></p>
+            <p><a href="#!"><i class="fa-solid fa-bag-shopping"></i></a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ----------detail_product_info--------- -->
+  <section class="detail_product_info">
+    <div class="label_box tab">
+      <label for="info_title01" class="info_title01 on_tab">상세정보</label>
+      <label for="info_title02" class="info_title02">주의사항</label>
+      <label for="info_title03" class="info_title03">구매후기</label>
+      <label for="info_title04" class="info_title04">구매안내</label>
+      <label for="info_title05" class="info_title05">상품문의</label>
+    </div>
+    <div class="info_box_outer">
+      <div class="detail_info_box01 sheet on_sheet">
+        <h3>하늘~하늘</h3>
+        <h3>러블리함 가득</h3>
+        <h3>스모크 밴딩으로 편안하게</h3>
+        <img src="./images/detail_info01.jpg" alt="상세01">
+        <p>어깨끈 길이 조절이 가능한 디자인으로</p>
+        <p>아이 체형에 맞게 편안하게 착용할 수 있어요.</p>
+        <p>성장하는 아이에게 맞춰 길이 조절이 가능해</p>
+        <p>오래도록 실용적으로 입기 좋으며,</p>
+        <p>활동 시에도 안정감 있는 핏을 유지해줍니다.</p>
+        <img src="./images/detail_info02.jpg" alt="상세02">
+        <p>허리 전체에 부드러운 밴딩 디테일을 더해</p>
+        <p>아이들이 오래 입어도 편안한 착용감을 느낄 수 있어요.</p>
+        <p>활동성이 뛰어나며, 답답함 없이 착용할 수 있답니다.</p>
+        <p>입고 벗기 쉬운 디자인으로</p>
+        <p>데일리룩부터 나들이룩까지 활용하기 좋아요~</p>
+        <img src="./images/detail_info03.jpg" alt="상세03">
+        <img src="./images/detail_info04.jpg" alt="상세04">
+        <p class="safe">본 제품은 FITI 시험 연구원을 통해 공급자 적합성 확인 인증(KC안전인증마크)을 받은 안전한 소재로 제작된 안전한 제품입니다.</p>
+        <ul class="detail_info_ul01">
+          <li class="title_pink">DREAM - SKY</li>
+          <li>- 사랑스러움이 가득한 체크 원피스</li>
+          <li>- 스모크 밴딩 디테일로 편안하고 안정감 있는 착용감</li>
+          <li>- 가볍고 시원한 원단</li>
+          <li>- 얇은 어깨끈으로 여리여리한 실루엣 연출</li>
+          <li>- 데일리룩은 물론, 바캉스룩으로도 활용도 만점</li>
+          <li>- 하단 자수 디테일로 고급스러움을 더한 포인트</li>
+          <li>- 끈길이 조절 가능 (±5cm)</li>
+        </ul>
+        <img src="./images/detail_info05.jpg" alt="상세05">
+        <img src="./images/detail_info06.jpg" alt="상세06">
+        <ul class="detail_info_ul02">
+          <li class="title_pink">모델사이즈 정보</li>
+          <li>Model Size : 37M / 16.5kg / 98cm / 110 착용</li>
+        </ul>
+        <ul class="detail_info_ul03">
+          <li class="title_pink">사이즈 정보</li>
+          <li>상세 사이즈의 치수는 측정 방법과 위치에 따라 1-3cm 오차가 발생할 수 있습니다.</li>
+          <li>구매 시 상세 사이즈를 확인 바랍니다.</li>
+          <li>측정 단위는 cm입니다.</li>
+        </ul>
+        <ul class="detail_info_ul04">
+          <li class="title_pink">원피스 사이즈</li>
+        </ul>
+        <img src="./images/detail_info07.jpg" alt="상세07">
+        <ul class="detail_info_ul05">
+          <li>- 측정법 및 측정자에 따라 1-3cm 오차가 발생할 수 있습니다.</li>
+          <li>- 무통장 입금 기한은 1시간 입니다.</li>
+          <li>- 상품을 소장하기 전 반드시 상태확인 후 택 제거 및 세탁을 해주세요.</li>
+          <li>- 세탁 및 착용 후에는 교환/환불이 불가합니다.</li>
+          <li>- 총장은 끈길이가 포함된 사이즈 입니다. </li>
+          <li>*Delivery 1-3일 내 배송 </li>
+        </ul>
+        <ul class="detail_info_ul06">
+          <li class="title_pink">WASHING TIP</li>
+          <li> 세탁을 실행한 이후로는 교환 및 환불이 불가능합니다. 권장 드리는 세탁 방법을 </li>
+          <li>반드시 준수하시길 바랍니다.</li>
+          <li>* 손세탁 미지근한 물(약 30'C)에 중성세제를 넣고 3분간 담근 후 손으로 부드럽게 </li>
+          <li> 세탁을 권장합니다.</li>
+          <li>* 세탁기 세탁기 사용 시 중성세제를 사용하여 30도 이하의 찬물에 최대한 약한 세탁 </li>
+          <li> 및 탈수를 권장합니다. 소재가 얇은 옷의 경우 뒤집어 세탁망을 사용해 주세요. 이염 </li>
+          <li> 방지를 위해 흰색 계열의 옷은 분리해서 세탁해 주세요. 드라이클리닝 명시가 되어 </li>
+          <li> 있는 제품은 물세탁을 금지합니다. </li>
+          <li>* 건조 비틀어 짜지 마시고 난방 기구를 피해 그늘에서 건조하십시오. 건조기 사용을</li>
+          <li> 지양합니다. (건조기 사용 시, 상태 변형이 있을 수 있으니 유의해 주세요.) </li>
+          <li>※ 니트 및 핸드메이드 제품의 경우 위 세탁 방법에서 제외되며, 상품 상세에 기재된 </li>
+          <li> 별도의 세탁 방법을 따라주시거나 드라이클리닝을 권장드립니다.</li>
+        </ul>
+      </div>
+      <div class="detail_info_box02">
+        <input type="checkbox" id="info_box02_01">
+        <input type="checkbox" id="info_box02_02">
+        <input type="checkbox" id="info_box02_03">
+        <div class="info_box02_01">
+          <div class="info_texttitle_box02">
+            <p>상품 결제정보</p>
+            <label for="info_box02_01"><i class="fa-solid fa-chevron-down"></i></label>
+          </div>
+          <div class="info_text_box02_01">
+            <p>· 무통장입금 주문시 입금 예정자와 실제 입금자의 이름, 입금액, 입금은행이 모두 일치해야만 입금확인이 완료됩니다.</p>
+            <p>· 입금확인이 완료되지 않았을 경우 고객센터(070-5014-2233) 또는 입금문의 게시판으로 문의주시면 확인도와드리겠습니다.</p>
+            <p>· 주문 후 7일 이내로 입금확인이 완료 되지 않은 주문은 자동 취소됩니다.</p>
+          </div>
+        </div>
+        <div class="info_box02_02">
+          <div class="info_texttitle_box02">
+            <p>배송안내</p>
+            <label for="info_box02_02"><i class="fa-solid fa-chevron-down"></i></label>
+          </div>
+          <div class="info_text_box02_02">
+            <p>배송방법 : 택배</p>
+            <p>배송지역 : 전국지역</p>
+            <p>배송비용 : 2,500원</p>
+            <p>배송기간 : 1~7일</p>
+            <p>회원이라면 누구나 배송비 부담없이 제품을 무료배송으로 받아보실 수 있습니다.</p>
+            <p>(단, 1만원 미만의 제품, 소잡화 등은 제외됩니다.)</p>
+            <p>- 오후 3시 이전 주문하신 제품은 당일발송 됩니다.</p>
+            <p> (금요일은 오후 2시 이전 주문건에 한하여 당일발송)</p>
+            <p>- 제품은 안전한 CJ대한통운(1588-1255)을 통해 배송됩니다.</p>
+            <p>- 리오더, 입고지연 등으로 배송 지연이 예상 될 경우 준비된 제품 먼저 부분 발송해드립니다.</p>
+            <p>교환 및 반품 방법</p>
+            <p>교환 또는 반품을 원하실 경우 마이페이지 또는 게시판을 통해</p>
+            <p>접수 후 CJ대한통운(1588-1255)를 통해 반송해주세요.</p>
+          </div>
+        </div>
+        <div class="info_box02_03">
+          <div class="info_texttitle_box02">
+            <p>교환 및 반품 안내</p>
+            <label for="info_box02_03"><i class="fa-solid fa-chevron-down"></i></label>
+          </div>
+          <div class="info_text_box02_03">
+            <p>회원이라면 누구나 무료 교환·반품 서비스를 이용하실 수 있습니다.</p>
+            <p>(단, 1만원 미만의 제품, 소잡화 등은 제외됩니다.)</p>
+            <p>교환 및 반품 주소</p>
+            <p>- [12070] 경기도 남양주시 진접읍 경복대로바람골길 42-36 오즈센터</p>
+            <p></p>
+          </div>
+        </div>
+      </div>
+      <div class="detail_info_box03">
+        <div class="review_top">
+          <div class="review_aver">
+            <img src="./images/aver_star.png" alt="별">
+            <span class="title_pink">4.9</span>
+          </div>
+          <div class="review_count">
+            <p>30개</p>
+            <span>리뷰</span>
+          </div>
+          <div class="review_top_graph">
+            <div class="review_top_graph01">
+              <p class="graph">98%</p>
+              <p class="graph90"></p>
+              <p class="graph">매우 만족</p>
+            </div>
+            <div class="review_top_graph02">
+              <p class="graph">2%</p>
+              <p class="graph2"></p>
+              <p class="graph">만족</p>
+            </div>
+            <div class="review_top_graph03">
+              <p class="graph">0%</p>
+              <p class="graph0"></p>
+              <p class="graph">보통</p>
+            </div>
+            <div class="review_top_graph04">
+              <p class="graph">0%</p>
+              <p class="graph0"></p>
+              <p class="graph">조금 아쉬워요</p>
+            </div>
+            <div class="review_top_graph05">
+              <p class="graph">0%</p>
+              <p class="graph0"></p>
+              <p class="graph">많이 아쉬워요</p>
+            </div>
+          </div>
+        </div>
+        <div class="review_middle">
+          <div class="review_img">
+            <i class="fa-solid fa-chevron-left left_btn"></i>
+            <img src="./images/review_middle01.jpg" alt="리뷰_미들01">
+            <img src="./images/review_middle02.jpg" alt="리뷰_미들02">
+            <img src="./images/review_middle03.jpg" alt="리뷰_미들03">
+            <img src="./images/review_middle04.jpg" alt="리뷰_미들04">
+            <i class="fa-solid fa-chevron-right right_btn"></i>
+          </div>
+          <div class="review_btn">
+            <!-- <input type="checkbox" name="review_write" id="review_write"> -->
+            <span>상품에 대한 당신의 소중한 경험을 공유해주세요!</span>
+            <!-- <label for="review_write" class="review_write">후기 작성</label> -->
+            <button class="review_write">후기 작성</button>
+            <div class="popup_bg"></div>
+            <div class="review_btn_popupbox">
+              <div class="review_btn_popup_top">
+                <img src="./images/review_write.jpg" alt="리뷰작성">
+                <div class="text">
+                  <p>[쇼핑몰] BEBE</p>
+                  <p>Dream - SKY</p>
+                </div>
+                <button type="button" class="review_write_close"><i class="fa-solid fa-x"></i></button>
+              </div>
+              <div class="review_btn_popup_middle">
+                <p class="review_btn_popup_title">상품에 만족하셨나요?</p>
+                <button type="button"><i class="fa-solid fa-star"></i></button>
+                <button type="button"><i class="fa-solid fa-star"></i></button>
+                <button type="button"><i class="fa-solid fa-star"></i></button>
+                <button type="button"><i class="fa-solid fa-star"></i></button>
+                <button type="button"><i class="fa-solid fa-star"></i></button>
+              </div>
+              <p class="review_btn_popup_title">어떤 점이 좋았는 지 선택해주세요!</p>
+              <div class="review_btn_popup_bottom">
+                <div class="review_size">
+                  <input type="checkbox" id="review_size01">
+                  <input type="checkbox" id="review_size02">
+                  <input type="checkbox" id="review_size03">
+                  <input type="checkbox" id="review_size04">
+                  <p>사이즈</p>
+                  <label for="review_size01" class="review_size01">딱 맞아요</label>
+                  <label for="review_size02" class="review_size02">적당해요</label>
+                  <label for="review_size03" class="review_size03">좀 작아요</label>
+                  <label for="review_size04" class="review_size04">좀 커요</label>
+                </div>
+                <div class="review_trans">
+                  <input type="checkbox" id="review_trans01">
+                  <input type="checkbox" id="review_trans02">
+                  <input type="checkbox" id="review_trans03">
+                  <p>배송</p>
+                  <label for="review_trans01" class="review_trans01">배송이 빨라요</label>
+                  <label for="review_trans02" class="review_trans02">배송이 제때와요</label>
+                  <label for="review_trans03" class="review_trans03">배송이 느려요</label>
+                </div>
+                <div class="review_price">
+                  <input type="checkbox" id="review_price01">
+                  <input type="checkbox" id="review_price02">
+                  <input type="checkbox" id="review_price03">
+                  <input type="checkbox" id="review_price04">
+                  <p>가격 / 옷감</p>
+                  <label for="review_price01" class="review_price01">가격이 합리적이에요</label>
+                  <label for="review_price02" class="review_price02">가격이 비싸요</label>
+                  <label for="review_price03" class="review_price03">옷감이 부드러워요</label>
+                  <label for="review_price04" class="review_price04">사진과 동일해요</label>
+                </div>
+              </div>
+
+              <div class="photo_outer">
+                <p>사진 / 동영상을 추가해주세요!</p>
+                <img src="./images/review_write_photo.jpg" alt="포토리뷰">
+              </div>
+              <div class="text_outer">
+                <textarea rows="4" cols="200">
+리뷰를 작성해주세요!
+리뷰 작성 시 유의사항 한 번 확인하기!
+욕설, 비방, 명예훼손성 표현은 누군가에게 상처가 될 수 있습니다.
+                </textarea>
+              </div>
+              <button type="submit" class="review_write_close">등록하기</button>
+            </div>
+          </div>
+
+          <div class="review_bottom">
+            <input type="radio" name="gender" id="recent" checked>
+            <input type="radio" name="gender" id="popular">
+            <div class="review_label_box">
+              <label for="recent" class="recent_label">최신순</label>
+              <label for="popular" class="popular_label">별점높은순</label>
+            </div>
+            <div class="review_box01">
+              <div class="review_box_left">
+                <p class="title_pink">케케****</p>
+                <p>키 : 102cm</p>
+                <p>몸무게 : 14kg</p>
+                <p>사이즈 : 110</p>
+                <br>
+                <p>- 사이즈가 적당해요</p>
+                <p>- 옷감이 부드러워요</p>
+                <p>- 사진과 동일해요</p>
+              </div>
+              <div class="review_box_right">
+                <div class="review_box_right01">
+                  <img src="./images/star.jpg" alt="">
+                  <img src="./images/star.jpg" alt="">
+                  <img src="./images/star.jpg" alt="">
+                  <img src="./images/star.jpg" alt="">
+                  <img src="./images/star.jpg" alt="">
+                  <span>2026.05.21</span>
+                </div>
+                <input type="checkbox" id="text_more1">
+                <div class="text_label">
+                  <p>모델이 입은 사이즈 그대로 시켰는데</p>
+                  <label for="text_more1"><i class="fa-solid fa-chevron-down"></i></label>
+                </div>
+                <div class="text_box">
+                  <p>모델이 입은 사이즈 그대로 시켰는데 아이한테 기장도 잘 맞고 너무 잘 어울려서 만족합니다^^</p>
+                  <img src="./images/review_bottom01.jpg" alt="리뷰상세01">
+                  <img src="./images/review_bottom02.jpg" alt="리뷰상세02">
+                </div>
+              </div>
+            </div>
+            <div class="review_box02">
+              <div class="review_box_left">
+                <p class="title_pink">희희****</p>
+                <p>키 : 102cm</p>
+                <p>몸무게 : 14kg</p>
+                <p>사이즈 : 110</p>
+                <br>
+                <p>- 사이즈가 적당해요</p>
+                <p>- 옷감이 부드러워요</p>
+                <p>- 사진과 동일해요</p>
+              </div>
+              <div class="review_box_right">
+                <img src="./images/star.jpg" alt="">
+                <img src="./images/star.jpg" alt="">
+                <img src="./images/star.jpg" alt="">
+                <img src="./images/star.jpg" alt="">
+                <img src="./images/star.jpg" alt="">
+                <span>2026.05.21</span>
+                <input type="checkbox" name="none" id="text_more2">
+                <div class="text_label">
+                  <p>모델이 입은 사이즈 그대로 시켰는데</p>
+                  <label for="text_more2" name="none" class="none"><i class="fa-solid fa-chevron-down"></i></label>
+                </div>
+                <div class="text_box">
+                  <p>모델이 입은 사이즈 그대로 시켰는데 아이한테 기장도 잘 맞고 너무 잘 어울려서 만족합니다^^</p>
+                  <img src="./images/review_bottom02.jpg" alt="리뷰상세01">
+                  <img src="./images/review_bottom01.jpg" alt="리뷰상세02">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="review_more_label">
+            <a href="#!">후기 더보기</a>
+          </div>
+        </div>
+      </div>
+      <div class="detail_info_box04">
+        <input type="checkbox" id="info_box04_01">
+        <input type="checkbox" id="info_box04_02">
+        <input type="checkbox" id="info_box04_03">
+        <div class="info_box04_01">
+          <div class="info_texttitle_box04">
+            <p>상품 결제정보</p>
+            <label for="info_box04_01"><i class="fa-solid fa-chevron-down"></i></label>
+          </div>
+          <div class="info_text_box04_01">
+            <p>· 무통장입금 주문시 입금 예정자와 실제 입금자의 이름, 입금액, 입금은행이 모두 일치해야만 입금확인이 완료됩니다.</p>
+            <p>· 입금확인이 완료되지 않았을 경우 고객센터(070-5014-2233) 또는 입금문의 게시판으로 문의주시면 확인도와드리겠습니다.</p>
+            <p>· 주문 후 7일 이내로 입금확인이 완료 되지 않은 주문은 자동 취소됩니다.</p>
+          </div>
+        </div>
+        <div class="info_box04_02">
+          <div class="info_texttitle_box04">
+            <p>배송안내</p>
+            <label for="info_box04_02"><i class="fa-solid fa-chevron-down"></i></label>
+          </div>
+          <div class="info_text_box04_02">
+            <p>배송방법 : 택배</p>
+            <p>배송지역 : 전국지역</p>
+            <p>배송비용 : 2,500원</p>
+            <p>배송기간 : 1~7일</p>
+            <p>회원이라면 누구나 배송비 부담없이 제품을 무료배송으로 받아보실 수 있습니다.</p>
+            <p>(단, 1만원 미만의 제품, 소잡화 등은 제외됩니다.)</p>
+            <p>- 오후 3시 이전 주문하신 제품은 당일발송 됩니다.</p>
+            <p> (금요일은 오후 2시 이전 주문건에 한하여 당일발송)</p>
+            <p>- 제품은 안전한 CJ대한통운(1588-1255)을 통해 배송됩니다.</p>
+            <p>- 리오더, 입고지연 등으로 배송 지연이 예상 될 경우 준비된 제품 먼저 부분 발송해드립니다.</p>
+            <p>교환 및 반품 방법</p>
+            <p>교환 또는 반품을 원하실 경우 마이페이지 또는 게시판을 통해</p>
+            <p>접수 후 CJ대한통운(1588-1255)를 통해 반송해주세요.</p>
+          </div>
+        </div>
+        <div class="info_box04_03">
+          <div class="info_texttitle_box04">
+            <p>교환 및 반품 안내</p>
+            <label for="info_box04_03"><i class="fa-solid fa-chevron-down"></i></label>
+          </div>
+          <div class="info_text_box04_03">
+            <p>회원이라면 누구나 무료 교환·반품 서비스를 이용하실 수 있습니다.</p>
+            <p>(단, 1만원 미만의 제품, 소잡화 등은 제외됩니다.)</p>
+            <p>교환 및 반품 주소</p>
+            <p>- [12070] 경기도 남양주시 진접읍 경복대로바람골길 42-36 오즈센터</p>
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail_info_box05">
+        <div class="QnA_box">
+          <p>문의사항을 작성해주세요</p>
+          <form action="">
+            <input type="text" class="QnA_title" placeholder="문의사항 제목을 입력해주세요" autofocus>
+            <input type="text" class="user_name" placeholder="성함 또는 아이디를 입력해주세요" autofocus>
+            <input type="text" class="QnA" placeholder="문의사항 내용을 입력해주세요" autofocus>
+            <button class="QnA_submit" type="button">등록</button>
+          </form>
+          <div class="QnA_list">
+          </div>
+        </div>  
+        <input type="checkbox" id="info_box05_01">
+        <input type="checkbox" id="info_box05_02">
+        <div class="info_box05_01">
+          <div class="info_texttitle_box05">
+            <p>상품 문의합니다.</p>
+            <p>김*****</p> <span>2026.06.15</span>
+            <label for="info_box05_01"><i class="fa-solid fa-chevron-down"></i></label>
+          </div>
+          <div class="info_text_box05_01">
+            <p>방금 구매했는데, 선물포장가능하다면 부탁드려요^^</p>
+          </div>
+        </div>
+        <div class="info_box05_02">
+          <div class="info_texttitle_box05">
+            <p>배송문의</p>
+            <p>chl*****</p> <span>2026.06.14</span>
+            <label for="info_box05_02"><i class="fa-solid fa-chevron-down"></i></label>
+          </div>
+          <div class="info_text_box05_02">
+            <p>방금 구매했는데, 선물포장가능하다면 부탁드려요^^</p>
+          </div>
+        </div>
+        <div class="info_box05_more">
+          <input type="checkbox" id="info_box05_more_btn">
+          <div class="info_box05_more_btn_box">
+            <input type="checkbox" id="info_box05_03">
+            <div class="info_box05_03">
+              <div class="info_texttitle_box05">
+                <p>해외배송</p>
+                <p>qkr*****</p> <span>2026.06.10</span>
+                <label for="info_box05_03"><i class="fa-solid fa-chevron-down"></i></label>
+              </div>
+              <div class="info_text_box05_03">
+                <p>국내배송만 가능한가요?</p>
+              </div>
+            </div>
+          </div>
+          <div class="info_box05_more_label_box">
+            <label for="info_box05_more_btn">더보기</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <!-- ----------footer--------- -->
+  <footer class="footer_outer" id="footer">
+    <div class="footer">
+      <div class="footer_left">
+        <div class="footer_title">BEBE</div>
+        <div class="footer_company">
+          <span>상호 : (주)베베</span>
+          <span>대표 : 정유진</span>
+          <span> 대표전화 : 010.1234.1234</span>
+          <p>팩스 : 02.000.0000</p>
+          <p>주소 : 100425 부산광역시 배구 베베동 베베윅스</p>
+          <p>사업자 등록번호 : 777-77-100042[사업자정보확인]</p>
+          <p>통신 판매업 신고번호 : 제 2026-부산 배구-1004호</p>
+          <span>개인 정보 보호 책임자 : 정유진</span>
+          <span>e-meil : BEBE@wings.com</span>
+        </div>
+      </div>
+      <div class="footer_middle">
+        <div class="footer_title">고객센터</div>
+        <div class="footer_info">
+          <p>070.1351.1351</p>
+          <p>평일 오전 10:00 - 오후 5:00</p>
+          <p>*금요일 - 오후 4:00</p>
+          <p>+입금계좌 정보</p>
+        </div>
+      </div>
+      <div class="footer_right">
+        <div class="footer_title">서비스정보</div>
+        <div class="footer_info">
+          <p><a href="#!">회사소개</a></p>
+          <p><a href="#!">이용약관</a></p>
+          <p><a href="#!">개인정보 처리 방침</a></p>
+          <p><a href="#!">이용안내</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <aside class="quick_btn">
+    <a href="#!">
+      <img src="./images/quick_chat.jpg" alt="채팅">
+    </a>
+    <a href="#top">
+      <img src="./images/quick_up.jpg" alt="업">
+    </a>
+    <a href="#footer">
+      <img src="./images/quick_down.jpg" alt="다운">
+    </a>
+  </aside>
+  <!-- -------------shopping_popup----------- -->
+  <section class="shopping_popup_outer">
+    <div class="shopping_popup">
+      <div class="shopping_popup_top">
+        <p class="popup_title">장바구니</p>
+        <p class="popup_sub_title">총 2개의 상품이 담겨있습니다.</p>
+      </div>
+      <div class="shopping_product">
+        <input type="checkbox" class="shopping_product_check" checked>
+        <button type="button" class="btn_product_delete">
+          <i class="fa-solid fa-xmark"></i></button>
+        <div class="shopping_product_top">
+          <div class="shopping_product_top_left">
+            <a href="#!"><img src="./images/shopping01.jpg" alt="장바구니01"></a>
+          </div>
+          <div class="shopping_product_top_right">
+            <p><a href="#!">피피 바디수트</a></p>
+            <p>18,900원</p>
+            <p>배송 : 무료 / 기본 배송</p>
+          </div>
+        </div>
+        <div class="shopping_product_bottom">
+          <div class="shopping_product_bottom_left">
+            <button class="minus">
+              <i class="fa-solid fa-minus"></i>
+            </button>
+            <p>1</p>
+            <button class="plus">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </div>
+          <div class="shopping_product_bottom_right">
+            <p>주문 금액 : 18,900원</p>
+          </div>
+        </div>
+      </div>
+      <div class="shopping_product">
+        <input type="checkbox" class="shopping_product_check" checked>
+        <button type="button" class="btn_product_delete">
+          <i class="fa-solid fa-xmark"></i></button>
+        <div class="shopping_product_top">
+          <div class="shopping_product_top_left">
+            <a href="#!"><img src="./images/shopping02.jpg" alt="장바구니02"></a>
+          </div>
+          <div class="shopping_product_top_right">
+            <p><a href="#!">DREAM-SKY</a></p>
+            <p>58,000원</p>
+            <p>배송 : 무료 / 기본 배송</p>
+          </div>
+        </div>
+        <div class="shopping_product_bottom">
+          <div class="shopping_product_bottom_left">
+            <button class="minus">
+              <i class="fa-solid fa-minus"></i>
+            </button>
+            <p>1</p>
+            <button class="plus">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </div>
+          <div class="shopping_product_bottom_right">
+            <p>주문 금액 : 58,000원</p>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="shopping_close">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="shopping_popup_bottom">
+        <div class="shopping_total_product_price">
+          <p>총 상품 금액</p>
+          <p>76,900원</p>
+        </div>
+        <div class="shopping_total_delivery_price">
+          <p>총 배송비</p>
+          <p>0원</p>
+        </div>
+        <div class="shopping_total_price">
+          <p>총 결제금액</p>
+          <p>76,900원</p>
+        </div>
+      </div>
+    </div>
+    <button class="shopping_total_delete">전체상품선택</button>
+    <button class="shopping_choose_delete">선택상품삭제</button>
+    <button class="shopping_all_order">전체상품주문</button>
+    <button class="shopping_choose_order">선택상품주문</button>
+    </div>
+  </section>
+  <!-- -------------ai_popup----------- -->
+  <!-- <section class="ai_popup_outer">
+    <div class="ai_popup">
+     <div class="ai_popup_top">
+      <p class="popup_title">AI 가상 피팅</p>
+      <p class="popup_sub_title">1단계. 전신 사진을 선택해주세요.</p>
+      <p class="popup_sub_title">2단계. 상품을 선택해주세요.</p>
+     </div>
+      <p class="popup_sub_title">1단계</p>
+     <div class="ai_popup_middle01">
+      <div>
+        <p>전신 사진을 선택해주세요.</p>
+        <img src="./images/review_write_photo.jpg" alt="">
+      </div>
+     </div>
+      <p class="popup_sub_title">2단계</p>
+     <div class="ai_popup_middle02">
+      <div class="ai_popup_search">
+        <input type="search" placeholder="검색어를 입력해주세요">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+      <div class="ai_product">
+        <div class="ai_product01"><a href="#!"><img src="./images/ai01.jpg" alt="ai_img"><p>하늘하늘 탑</p></a></div>
+        <div class="ai_product02"><a href="#!"><img src="./images/ai02.jpg" alt=""><p>블롬샤베트 세트</p></a></div>
+        <div class="ai_product03"><a href="#!"><img src="./images/ai03.jpg" alt=""><p>물개친구 세트</p></a></div>
+      </div>
+     </div>
+     <button type="button" class="ai_popup_close">
+       <i class="fa-solid fa-xmark"></i>
+     </button>
+     <button class="ai_fitting_btn">AI 가상 피팅 시작하기</button>
+    </div>
+  </section> -->
+  <!-- -------------search_popup----------- -->
+  <section class="search_popup_outer">
+    <div class="search_popup">
+      <div class="search_popup_top">
+        <div class="search_popup_search">
+          <input type="search" placeholder="검색어를 입력해주세요">
+          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+      </div>
+      <p class="search_popup_subtitle">최근 검색어</p>
+      <div class="search_popup_middle01">
+        <ul class="wrap">
+          <li>
+            <a href="#!">여아</a>
+            <button type="button" class="btn_search_delete">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </li>
+          <li>
+            <a href="#!">원피스</a>
+            <button type="button" class="btn_search_delete">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </li>
+          <li>
+            <a href="#!">바지</a>
+            <button type="button" class="btn_search_delete">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </li>
+          <li>
+            <a href="#!">신발</a>
+            <button type="button" class="btn_search_delete">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </li>
+          <li>
+            <a href="#!">봄</a>
+            <button type="button" class="btn_search_delete">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </li>
+          <li>
+            <a href="#!">신상품</a>
+            <button type="button" class="btn_search_delete">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <p class="search_popup_subtitle">베베 추천 검색어</p>
+      <div class="search_popup_middle02">
+        <input type="checkbox" name="search_popup_recommend01" id="search_popup_recommend01">
+        <input type="checkbox" name="search_popup_recommend02" id="search_popup_recommend02">
+        <input type="checkbox" name="search_popup_recommend03" id="search_popup_recommend03">
+        <input type="checkbox" name="search_popup_recommend04" id="search_popup_recommend04">
+        <input type="checkbox" name="search_popup_recommend05" id="search_popup_recommend05">
+        <div class="search_popup">
+          <label for="search_popup_recommend01"><a href="#!">집콕룩</a></label>
+          <label for="search_popup_recommend02"><a href="#!">키키티셔츠</a></label>
+          <label for="search_popup_recommend03"><a href="#!">신상</a></label>
+          <label for="search_popup_recommend04"><a href="#!">육아필수템</a></label>
+          <label for="search_popup_recommend05"><a href="#!">모자</a></label>
+        </div>
+      </div>
+      <p class="search_popup_subtitle">인기 검색어</p>
+      <div class="search_popup_middle03">
+        <ul class="search_popular_left">
+          <li><a href="#!">1. 수영복</a></li>
+          <li><a href="#!">2. 여름옷</a></li>
+          <li><a href="#!">3. 모자</a></li>
+          <li><a href="#!">4. 바람막이</a></li>
+          <li><a href="#!">5. 모기장옷</a></li>
+        </ul>
+        <ul class="search_popular_right">
+          <li><a href="#!">6. 바디수트</a></li>
+          <li><a href="#!">7. 턱받이</a></li>
+          <li><a href="#!">8. 필수템</a></li>
+          <li><a href="#!">9. 젤리슈즈</a></li>
+          <li><a href="#!">10. 샌들</a></li>
+        </ul>
+      </div>
+      <p class="search_popup_subtitle">방금 본 상품</p>
+      <div class="search_popup_bottom">
+        <div class="search_product01"><a href="#!"><img src="./images/search01.jpg" alt="search_img">
+            <p>톡톡매쉬 샌들</p>
+          </a></div>
+        <div class="search_product02"><a href="#!"><img src="./images/search02.jpg" alt="">
+            <p>플라워 슬리온</p>
+          </a></div>
+        <div class="search_product03"><a href="#!"><img src="./images/search03.jpg" alt="">
+            <p>키치드레스</p>
+          </a></div>
+      </div>
+      <button type="button" class="search_popup_close">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+  </section>
+</body>
+
+</html>
+<!--
+ 쇼핑 <i class="fa-solid fa-bag-shopping"></i>
+ 하트 <i class="fa-regular fa-heart"></i></a>
+ 유저 <i class="fa-regular fa-user"></i>
+     <i class="fa-solid fa-user"></i>
+ 돋보기 <i class="fa-solid fa-magnifying-glass"></i>
+     <i class="fa-brands fa-sistrix"></i>
+ 메뉴 <i class="fa-solid fa-bars"></i>
+ 아래<i class="fa-solid fa-chevron-down"></i>
+-->

@@ -1,0 +1,262 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+html {
+  font-size: 16px;
+}
+
+button {
+  cursor: pointer;
+}
+
+/***************** common ******************/
+body {
+  color: #333;
+}
+
+.contents_title {
+  margin: 0 20px 10px 10px;
+  width: calc(100% - 20px);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+}
+.contents_title p {
+  font-size: 1.2rem;
+}
+.contents_title .more a {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.mb {
+  margin-bottom: 30px;
+}
+
+/************** login_outer **************/
+.login_outer {
+  margin: 100px auto;
+  text-align: center;
+}
+.login_outer h3 {
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.login_outer p {
+  text-align: center;
+}
+.login_outer > div > button {
+  border: none;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+.login_outer > div > button a {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.login_outer .kakao {
+  margin-top: 30px;
+}
+.login_outer .kakao button {
+  margin-top: 30px;
+  background-color: #FEE500;
+}
+.login_outer .naver button {
+  background-color: #03C75A;
+}
+.login_outer .naver button a span {
+  font-weight: bold;
+  color: white;
+}
+.login_outer .naver button a p {
+  color: white;
+}
+.login_outer .apple button {
+  background-color: #000;
+}
+.login_outer .apple button a i {
+  color: white;
+}
+.login_outer .apple button a p {
+  color: white;
+}
+.login_outer .google button {
+  background-color: #ddd;
+}
+.login_outer .google button a p {
+  color: #666;
+}
+.login_outer .line {
+  max-width: 500px;
+  margin: 30px auto;
+  display: flex;
+  height: 30px;
+}
+.login_outer .line hr {
+  margin: 14px 0;
+  text-align: center;
+  border: none;
+  background-color: #999;
+  height: 1px;
+  flex: 1;
+}
+.login_outer .line p {
+  line-height: 30px;
+  text-align: center;
+  color: #999;
+  margin: 0 10px;
+}
+.login_outer .phone_outer {
+  text-align: center;
+  margin: 0 auto;
+}
+.login_outer .phone_outer #phone {
+  display: none;
+}
+.login_outer .phone_outer .phone_tab {
+  border: none;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 50px;
+  width: 230px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin: 0 auto;
+}
+.login_outer .phone_outer .phone_tab label {
+  cursor: pointer;
+}
+.login_outer .user_info_outer {
+  margin: 0 auto;
+  max-width: 500px;
+}
+.login_outer .user_info_outer .joinForm {
+  text-align: left;
+}
+.login_outer .user_info_outer .joinForm p {
+  text-align: left;
+  margin-bottom: 10px;
+}
+.login_outer .user_info_outer .joinForm label {
+  font-weight: bold;
+  margin: 30px 10px 5px 0;
+  display: block;
+}
+.login_outer .user_info_outer .joinForm label font {
+  margin-left: 5px;
+}
+.login_outer .user_info_outer .joinForm input {
+  height: 30px;
+  align-items: center;
+}
+.login_outer .user_info_outer .joinForm button {
+  height: 30px;
+  line-height: 30px;
+}
+.login_outer .user_info_outer .joinForm select {
+  height: 34px;
+}
+.login_outer .user_info_outer .joinForm .userAddress {
+  margin-bottom: 0;
+}
+.login_outer .user_info_outer .addinfo {
+  text-align: left;
+}
+.login_outer .user_info_outer .addinfo p {
+  text-align: left;
+  margin-bottom: 10px;
+  font-weight: bold;
+  margin: 30px 10px 5px 0;
+}
+.login_outer .user_info_outer .addinfo label font {
+  margin-left: 5px;
+}
+.login_outer .user_info_outer .addinfo button {
+  height: 30px;
+  line-height: 30px;
+}
+.login_outer .user_info_outer .addinfo select {
+  height: 34px;
+}
+.login_outer .user_info_outer .agreeForm fieldset {
+  text-align: center;
+}
+.login_outer .user_info_outer .agreeForm fieldset p {
+  text-align: center;
+}
+.login_outer .user_info_outer .agreeForm fieldset ul {
+  padding: 10px;
+}
+.login_outer .user_info_outer .agreeForm fieldset ul li {
+  margin-bottom: 10px;
+}
+.login_outer .user_info_outer .agreeForm fieldset ul li label {
+  display: inline;
+  margin: 0;
+}
+.login_outer .user_info_outer .agreeForm fieldset ul li .terms_box_outer {
+  width: 480px;
+  padding: 10px;
+}
+.login_outer .user_info_outer .agreeForm fieldset ul li .terms_box_outer p {
+  text-align: left;
+}
+.login_outer .user_info_outer h3 {
+  margin-top: 30px;
+  border-bottom: 1px solid black;
+  max-width: 500px;
+  text-align: left;
+  padding: 10px;
+}
+.login_outer .submit {
+  background-color: white;
+  border-radius: 20px;
+  border: 1px solid #FF7A80;
+  box-sizing: border-box;
+  color: #FF7A80;
+  align-items: center;
+  text-align: center;
+}
+.login_outer .submit a {
+  color: #FF7A80;
+}
+.login_outer .submit {
+  height: 50px;
+  width: 230px;
+  padding: 10px;
+  margin-top: 30px;
+  font-size: 1.1rem;
+}
+.login_outer .submit:hover {
+  background-color: #FF7A80;
+  border: none;
+  border-radius: 20px;
+  box-sizing: border-box;
+  color: white;
+}
+.login_outer .submit:hover a {
+  color: white;
+}
+
+/************** footer_outer **************//*# sourceMappingURL=signup.css.map */

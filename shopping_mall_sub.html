@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BEBE</title>
+  
+  <link rel="icon" type="image/png" href="./images/R2.png">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/sub.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap" rel="stylesheet">
+  <!-- jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!-- js -->
+  <script type="module" src="./js/sub.js" defer></script>
+  <script type="module" src="./js/sub_product.js"></script>
+  <script type="module" src="./js/header_footer.js"></script>
+  <script type="module" src="./js/popup.js"></script>
+  <script>
+
+  </script>
+ <style>
+     /* --------------------------default_setting-------------------------- */
+    * {margin: 0; padding: 0;}
+    li{list-style: none;}
+    a{color: black; text-decoration: none;}
+    .wrap .best_product_all{
+      width: 1070px;
+      background-color: #eee;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 auto;
+    }
+
+     /* --------------------------  transition-------------------------- */
+    </style>
+    </head>
+  <body>
+     <header class="header" id="top">
+    <div class="header_event">
+      <p><a href="#!">회원가입시 최대 10,000원 할인</a></p>
+    </div>
+    <section class="header_inner">
+      <div class="header_utility">
+        <p>로그인</p>
+        <p>회원가입</p>
+        <p>커뮤니티</p>
+      </div>
+      <div class="header_logo">
+        <a href="./index.html"><img src="./images/logo_header.png" alt="로고_헤더"></a>
+      </div>
+      <div class="header_usermenu">
+        <a href="#!" class="shopping_open"><i class="fa-solid fa-bag-shopping"></i></a>
+        <a href="#!"><i class="fa-regular fa-user"></i></a>
+        <a href="#!" class="search_popup_open"><i class="fa-solid fa-magnifying-glass"></i></a>
+      </div>
+    </section>
+  </header>
+  <nav class="gnb mb">
+    <div class="gnb_menu">
+      <a href="#!"><i class="fa-solid fa-bars btn_open"></i></a>
+      <a href="#!"><i class="fa-solid fa-x btn_close"></i></a>
+      <p><a href="#!">신상</a></p>
+      <p class="touch"><a href="./shopping_mall_sub.html">인기</a></p>
+      <p><a href="#!">영아</a></p>
+      <p><a href="#!">유아</a></p>
+      <p><a href="#!">신발</a></p>
+      <p><a href="#!">악세서리</a></p>
+      <p><a href="#!">육아템</a></p>
+    </div>
+    <div class="gnb_menu_full_outer">
+      <div class="gnb_menu_full">
+        <a href="#!"><i class="fa-solid fa-bars"></i></a>
+        <ul class="menu_full02">
+          <li><a href="#!">상의</a></li>
+          <li><a href="">하의</a></li>
+          <li><a href="#!">상하의</a></li>
+          <li><a href="#!">아우터</a></li>
+          <li><a href="#!">실내복</a></li>
+          <li><a href="#!">신발</a></li>
+          <li><a href="#!">악세서리</a></li>
+        </ul>
+        <ul class="menu_full03">
+          <li><a href="#!">상의</a></li>
+          <li><a href="">하의</a></li>
+          <li><a href="#!">상하의</a></li>
+          <li><a href="#!">아우터</a></li>
+          <li><a href="#!">실내복</a></li>
+          <li><a href="#!">신발</a></li>
+          <li><a href="#!">악세서리</a></li>
+        </ul>
+        <ul class="menu_full04">
+          <li><a href="#!">0-2세 추천</a></li>
+          <li><a href="#!">집콕룩</a></li>
+          <li><a href="#!">외출룩</a></li>
+          <li><a href="#!">피부민감용</a></li>
+        </ul>
+        <ul class="menu_full05">
+          <li><a href="#!">3-5세 추천</a></li>
+          <li><a href="#!">등원룩</a></li>
+          <li><a href="#!">활동룩</a></li>
+          <li><a href="#!">데일리룩</a></li>
+        </ul>
+        <ul class="menu_full06">
+          <li><a href="#!">운동화</a></li>
+          <li><a href="#!">구두</a></li>
+          <li><a href="#!">실내화</a></li>
+          <li><a href="#!">샌들</a></li>
+          <li><a href="#!">장화</a></li>
+          <li><a href="#!">아쿠아슈즈</a></li>
+          <li><a href="#!">젤리슈즈</a></li>
+          <li><a href="#!">부츠</a></li>
+        </ul>
+        <ul class="menu_full07">
+          <li><a href="#!">모자</a></li>
+          <li><a href="#!">헤어</a></li>
+          <li><a href="#!">양말</a></li>
+          <li><a href="#!">가방</a></li>
+          <li><a href="#!">장갑</a></li>
+          <li><a href="#!">목도리</a></li>
+        </ul>
+        <!-- <div class="line"></div> -->
+        <ul class="menu_full08">
+          <li><a href="#!">수유 용품</a></li>
+          <li><a href="#!">목욕 용품</a></li>
+          <li><a href="#!">속겉싸개</a></li>
+          <li><a href="#!">아기띠</a></li>
+          <li><a href="#!">턱받이</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+      <!-- <section class="main_banner mb">
+        <input type="radio" id="btn01" name="reccomend" checked>
+        <input type="radio" id="btn02" name="reccomend" >
+        <input type="radio" id="btn03" name="reccomend" >
+        <div class="main_banner_visual">
+         <div></div>
+        </div>
+        <div class="main_banner_btn">
+          <label for="btn01" ><div class="btn01"></div></label>
+          <label for="btn02"><div class="btn02"></div></label>
+          <label for="btn03"><div class="btn03"></div></label>
+        </div>
+      </section> -->
+      <!-- ----------sub_top--------- -->
+      <h1>인기룩</h1>
+      <div class="wrap">
+        <div class="option_title tab">
+          <label for="chk01" class="on_tab">전체</label>
+          <label for="chk01">상의</label>
+          <label for="chk02">하의</label>
+          <label for="chk03">상하의 세트</label>
+          <label for="chk04">아우터</label>
+          <label for="chk05">실내복</label>
+          <label for="chk06">신발</label>
+          <label for="chk07">악세서리</label>
+        </div>
+        <div class="filter"><P>필터<i class="fa-solid fa-ellipsis-vertical"></i></P></div>
+        <div class="option">
+          <div class="option_box">
+          <div class="option_gender">
+            <span>성별</span>
+            <p><a href="#!">남아</a></p>
+            <p><a href="#!">여아</a></p>
+            <p><a href="#!">통합</a></p>
+          </div>
+          <div class="option_size">
+            <span>사이즈</span>
+            <p><a href="#!">80</a></p>
+            <p><a href="#!">90</a></p>
+            <p><a href="#!">100</a></p>
+            <p><a href="#!">110</a></p>
+            <p><a href="#!">120</a></p>
+            <p><a href="#!">130</a></p>
+            <p><a href="#!">140</a></p>
+            <p><a href="#!">150</a></p>
+            <p><a href="#!">기타</a></p>
+          </div>
+          <div class="option_color">
+            <span>컬러</span>
+            <a href="#!" class="white_F2EDED"></a>
+            <a href="#!" class="yellow_FFE17E"></a>
+            <a href="#!" class="orange_FF7817"></a>
+            <a href="#!" class="red_E72718"></a>
+            <a href="#!" class="green_98DD44"></a>
+            <a href="#!"class="skyblue_83D6FF"></a>
+            <a href="#!" class="blue_5C6AFD"></a>
+            <a href="#!" class="violet_BD80FF"></a>
+            <a href="#!" class="pink_FF7A80"></a>
+            <a href="#!" class="brown_B97E43"></a>
+            <a href="#!" class="black_5B5A5D"></a>
+            <p><a href="#!">통합</a></p>
+          </div>
+        </div>
+        <div class="option_btn">
+          <div class="reset_btn"><a href="#!">초기화</a></div>
+          <div class="search_btn"><a href="#!">검색</a></div>
+        </div>
+        </div>
+      </div>
+      <div class="sub_product_solt">
+        <p>전체상품 36개</p>
+        <select name="list-style" id="option_list">
+          <option value="default">정렬방식</option>
+          <option value="low">가격낮은순</option>
+          <option value="high">가격높은순</option>
+          <option value="latest">최신상품순</option>
+          <option value="popular">인기순</option>
+        </select>
+      </div>
+      <div class="section_wrap">
+        <section class="sub_product_list">
+          <div class="best_product_all">
+          </div>
+          <!-- <section class="sub_product_all_01">
+            <div class="sub_product_all">
+              <div class="sub_product touch">
+              <div class="sub_product_img" >   
+                <a href="./shopping_detail.html" >
+                  <img src="./images/top01.jpg" alt="상의01">
+                </a>
+              </div>
+              <div class="sub_product_info">
+                  <p class="product_title"><a href="./shopping_detail.html">DREAM - SKY</a></p>
+                  <p class="product_price"><a href="#!">58,000원</a></p>
+                  <div class="sub_product_color">
+                    <p class="product_color01 white_F2EDED"></p>
+                    <p class="product_color02 pink_FF7A80"></p>
+                    <p class="product_color03 skyblue_83D6FF"></p>
+                  </div>
+                <div class="sub_product_info_bottom">
+                  <p class="product_review">리뷰 30</p>
+                  <div class="product_btn">
+                    <p><a href="#!">바로구매</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sub_product">
+              <div class="sub_product_img">   
+                <a href="#!">
+                  <img src="./images/top02.jpg" alt="상의02">
+                </a>
+              </div>
+              <div class="sub_product_info">
+                  <p class="product_title"><a href="#!">골지 프릴 반팔 티셔츠</a></p>
+                  <p class="product_price"><a href="#!">11,900원</a></p>
+                  <div class="sub_product_color">
+                    <p class="product_color01 yellow_FFE17E"></p>
+                    <p class="product_color02 pink_FF7A80"></p>
+                    <p class="product_color03 skyblue_83D6FF"></p>
+                  </div>
+                <div class="sub_product_info_bottom">
+                  <p class="product_review">리뷰 1</p>
+                  <div class="product_btn">
+                    <p><a href="#!">바로구매</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+              <div class="sub_product">
+              <div class="sub_product_img">   
+                <a href="#!">
+                  <img src="./images/top03.jpg" alt="상의03">
+                </a>
+              </div>
+              <div class="sub_product_info">
+                  <p class="product_title"><a href="#!">코튼 매쉬 슬리핑백</a></p>
+                  <p class="product_price"><a href="#!">24,900원</a></p>
+                  <div class="sub_product_color">
+                    <p class="product_color01 white_F2EDED"></p>
+                    <p class="product_color02 skyblue_83D6FF"></p>
+                    <p class="product_color03 yellow_FFE17E"></p>
+                    <p class="product_color04 red_E72718"></p>
+                    <p class="product_color05 green_98DD44"></p>
+                    <p class="product_color06 brown_B97E43"></p>
+                  </div>
+                <div class="sub_product_info_bottom">
+                  <p class="product_review">리뷰 13</p>
+                  <div class="product_btn">
+                    <p><a href="#!">바로구매</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>  
+            <div class="sub_product">
+              <div class="sub_product_img">   
+                <a href="#!">
+                  <img src="./images/top04.jpg" alt="상의04">
+                </a>
+              </div>
+              <div class="sub_product_info">
+                  <p class="product_title"><a href="#!">럽럽 티셔츠</a></p>
+                  <p class="product_price"><a href="#!">39,900원</a></p>
+                  <div class="sub_product_color">
+                    <p class="product_color01 yellow_FFE17E"></p>
+                    <p class="product_color02 green_98DD44"></p>
+                  </div>
+                <div class="sub_product_info_bottom">
+                  <p class="product_review">리뷰 1</p>
+                  <div class="product_btn">
+                    <p><a href="#!">바로구매</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sub_product">
+              <div class="sub_product_img">   
+                <a href="#!">
+                  <img src="./images/top05.jpg" alt="상의05">
+                </a>
+              </div>
+              <div class="sub_product_info">
+                  <p class="product_title"><a href="#!">체크 퐁퐁 원피스(가방세트)</a></p>
+                  <p class="product_price"><a href="#!">14,900원</a></p>
+                  <div class="sub_product_color">
+                    <p class="product_color01 white_F2EDED"></p>
+                    <p class="product_color02 skyblue_83D6FF"></p>
+                    <p class="product_color03"></p>
+                  </div>
+                <div class="sub_product_info_bottom">
+                  <p class="product_review">리뷰 5</p>
+                  <div class="product_btn">
+                    <p><a href="#!">바로구매</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sub_product">
+              <div class="sub_product_img">   
+                <a href="#!">
+                  <img src="./images/top06.jpg" alt="상의06">
+                </a>
+              </div>
+              <div class="sub_product_info">
+                  <p class="product_title"><a href="#!">뽀 그래비티 티셔츠</a></p>
+                  <p class="product_price"><a href="#!">18,900원</a></p>
+                  <div class="sub_product_color">
+                    <p class="product_color01 white_F2EDED"></p>
+                    <p class="product_color02 skyblue_83D6FF"></p>
+                    <p class="product_color03 brown_B97E43"></p>
+                  </div>
+                <div class="sub_product_info_bottom">
+                  <p class="product_review">리뷰 9</p>
+                  <div class="product_btn">
+                    <p><a href="#!">바로구매</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sub_product">
+              <div class="sub_product_img">   
+                <a href="#!">
+                  <img src="./images/top07.jpg" alt="상의07">
+                </a>
+              </div>
+              <div class="sub_product_info">
+                  <p class="product_title"><a href="#!">스트랩 캔디 티셔츠</a></p>
+                  <p class="product_price"><a href="#!">19,900원</a></p>
+                  <div class="sub_product_color">
+                    <p class="product_color01 white_F2EDED"></p>
+                    <p class="product_color02 skyblue_83D6FF"></p>
+                  </div>
+                <div class="sub_product_info_bottom">
+                  <p class="product_review">리뷰 1</p>
+                  <div class="product_btn">
+                    <p><a href="#!">바로구매</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sub_product">
+              <div class="sub_product_img">   
+                <a href="#!">
+                  <img src="./images/top08.jpg" alt="상의08">
+                </a>
+              </div>
+              <div class="sub_product_info">
+                <p class="product_title"><a href="#!">피마 커튼 저지 가디건</a></p>
+                <p class="product_price"><a href="#!">14,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 white_F2EDED"></p>
+                  <p class="product_color02 pink_FF7A80"></p>
+                  <p class="product_color03 skyblue_83D6FF"></p>
+                </div>
+                <div class="sub_product_info_bottom">
+                  <p class="product_review">리뷰 20</p>
+                  <div class="product_btn">
+                    <p><a href="#!">바로구매</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+              <div class="page_btn_outer mb">
+                <div class="page_btn">
+                  <a href="#!"><i class="fa-solid fa-chevron-left left_btn"></i></a>
+                  <p><a href="#!">1</a></p>
+                  <a href="#!"><i class="fa-solid fa-chevron-right right_btn"></i></a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="sub_product_all_02">
+          <div class="sub_product_all">
+            <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/popular05.jpg" alt="하의01">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">코튼 릴렉스 팬츠</a></p>
+                <p class="product_price"><a href="#!">23,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 white_F2EDED"></p>
+                  <p class="product_color02 brown_B97E43"></p>
+                </div>
+              <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 30</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/popular06.jpg" alt="하의02">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">코튼 스판 하프 팬츠</a></p>
+                <p class="product_price"><a href="#!">20,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 white_F2EDED"></p>
+                  <p class="product_color02 blue_5C6AFD"></p>
+                </div>
+              <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 12</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/popular07.jpg" alt="하의03">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">릴렉스 체크 밴딩 팬츠</a></p>
+                <p class="product_price"><a href="#!">19,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 white_F2EDED"></p>
+                  <p class="product_color02 skyblue_83D6FF"></p>
+                  <p class="product_color03"></p>
+                </div>
+              <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 10</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/popular08.jpg" alt="하의04">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">소프트터치 조거 팬츠</a></p>
+                <p class="product_price"><a href="#!">23,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 white_F2EDED"></p>
+                  <p class="product_color02 skyblue_83D6FF"></p>
+                  <p class="product_color03 brown_B97E43"></p>
+                </div>
+              <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 3</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page_btn_outer">
+          <div class="page_btn mb">
+            <a href="#!"><i class="fa-solid fa-chevron-left left_btn"></i></a>
+            <p><a href="#!">1</a></p>
+            <a href="#!"><i class="fa-solid fa-chevron-right right_btn"></i></a>
+          </div>
+          </div>
+          </div>
+          </section>
+
+          <section class="sub_product_all_03">
+          <div class="sub_product_all">
+            <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/body01.jpg" alt="상하의01">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">베베 파자마</a></p>
+                <p class="product_price"><a href="#!">38,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 yellow_FFE17E"></p>
+                  <p class="product_color02 pink_FF7A80"></p>
+                </div>
+                <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 18</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/body02.jpg" alt="상하의02">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">베이비 파자마</a></p>
+                <p class="product_price"><a href="#!">34,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 white_F2EDED"></p>
+                  <p class="product_color02 blue_5C6AFD"></p>
+                </div>
+              <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 7</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/body03.jpg" alt=상하의03">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">체크퐁퐁 원피스</a></p>
+                <p class="product_price"><a href="#!">14,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 white_F2EDED"></p>
+                  <p class="product_color02 skyblue_83D6FF"></p>
+                </div>
+              <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 11</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/body04.jpg" alt="상하의04">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">피피 멜빵 수트</a></p>
+                <p class="product_price"><a href="#!">14,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 white_F2EDED"></p>
+                  <p class="product_color02 skyblue_83D6FF"></p>
+                  <p class="product_color01 yellow_FFE17E"></p>
+                </div>
+              <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 8</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/body05.jpg" alt="상하의05">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">베베 멜빵 수트</a></p>
+                <p class="product_price"><a href="#!">24,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 white_F2EDED"></p>
+                  <p class="product_color03 red_E72718"></p>
+                </div>
+              <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 2</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/body06.jpg" alt="상하의06">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">하트 파자마</a></p>
+                <p class="product_price"><a href="#!">34,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 white_F2EDED"></p>
+                  <p class="product_color02 skyblue_83D6FF"></p>
+                </div>
+              <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 3</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/body07.jpg" alt="상하의07">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">하트무 점프수트</a></p>
+                <p class="product_price"><a href="#!">40,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 white_F2EDED"></p>
+                  <p class="product_color02 skyblue_83D6FF"></p>
+                  <p class="product_color03 brown_B97E43"></p>
+                </div>
+              <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 5</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/body08.jpg" alt="상하의08">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">엔젤 수트</a></p>
+                <p class="product_price"><a href="#!">33,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 white_F2EDED"></p>
+                  <p class="product_color02 skyblue_83D6FF"></p>
+                  <p class="product_color03 yellow_FFE17E"></p>
+                </div>
+              <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 10</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page_btn_outer">
+          <div class="page_btn mb">
+            <a href="#!"><i class="fa-solid fa-chevron-left left_btn"></i></a>
+            <p><a href="#!">1</a></p>
+            <a href="#!"><i class="fa-solid fa-chevron-right right_btn"></i></a>
+          </div>
+          </div>
+          </div>
+          </section>
+
+          <section class="sub_product_all_04">
+          <div class="sub_product_all">
+            <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/outer01.jpg" alt="아우터01">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">베베 방수 우비</a></p>
+                <p class="product_price"><a href="#!">53,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 white_F2EDED"></p>
+                  <p class="product_color02 skyblue_83D6FF"></p>
+                </div>
+              <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 10</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/outer02.jpg" alt="아우터02">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">퓨어 가디건</a></p>
+                <p class="product_price"><a href="#!">38,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 white_F2EDED"></p>
+                  <p class="product_color02 yellow_FFE17E"></p>
+                  <p class="product_color03 green_98DD44"></p>
+                </div>
+              <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 8</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/outer03.jpg" alt="아우터03">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">커들 가디건</a></p>
+                <p class="product_price"><a href="#!">38,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 white_F2EDED"></p>
+                  <p class="product_color02 yellow_FFE17E"></p>
+                  <p class="product_color03 pink_FF7A80"></p>
+                </div>
+              <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 10</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/outer04.jpg" alt="아우터04">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">룸 카르디안 가디건</a></p>
+                <p class="product_price"><a href="#!">43,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 white_F2EDED"></p>
+                  <p class="product_color02 pink_FF7A80"></p>
+                  <p class="product_color03 black_5B5A5D"></p>
+                </div>
+              <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 3</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page_btn_outer">
+          <div class="page_btn mb">
+            <a href="#!"><i class="fa-solid fa-chevron-left left_btn"></i></a>
+            <p><a href="#!">1</a></p>
+            <a href="#!"><i class="fa-solid fa-chevron-right right_btn"></i></a>
+          </div>
+          </div>
+          </div>
+          </section>
+
+          <section class="sub_product_all_05">
+          <div class="sub_product_all">
+            <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/body01.jpg" alt="실내복01">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">베베 파자마</a></p>
+                <p class="product_price"><a href="#!">38,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 yellow_FFE17E"></p>
+                  <p class="product_color02 pink_FF7A80"></p>
+                </div>
+                <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 18</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/body02.jpg" alt="실내복02">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">베이비 파자마</a></p>
+                <p class="product_price"><a href="#!">34,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 white_F2EDED"></p>
+                  <p class="product_color02 blue_5C6AFD"></p>
+                </div>
+              <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 7</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/body06.jpg" alt="실내복03">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">하트 파자마</a></p>
+                <p class="product_price"><a href="#!">34,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 white_F2EDED"></p>
+                  <p class="product_color02 skyblue_83D6FF"></p>
+                </div>
+              <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 3</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/body07.jpg" alt="실내복04">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">하트무 점프수트</a></p>
+                <p class="product_price"><a href="#!">40,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 white_F2EDED"></p>
+                  <p class="product_color02 skyblue_83D6FF"></p>
+                  <p class="product_color03 brown_B97E43"></p>
+                </div>
+              <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 5</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page_btn_outer">
+          <div class="page_btn mb">
+            <a href="#!"><i class="fa-solid fa-chevron-left left_btn"></i></a>
+            <p><a href="#!">1</a></p>
+            <a href="#!"><i class="fa-solid fa-chevron-right right_btn"></i></a>
+          </div>
+          </div>
+          </div>
+          </section>
+
+          <section class="sub_product_all_06">
+          <div class="sub_product_all">
+            <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/shoes01.jpg" alt="신발01">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">젤리본 슈즈</a></p>
+                <p class="product_price"><a href="#!">24,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 pink_FF7A80"></p>
+                  <p class="product_color02 violet_BD80FF"></p>
+                </div>
+                <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 2</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/shoes02.jpg" alt="신발02">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">루나샤인LED 구두</a></p>
+                <p class="product_price"><a href="#!">54,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 white_F2EDED"></p>
+                  <p class="product_color02 pink_FF7A80"></p>
+                </div>
+              <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 3</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/shoes03.jpg" alt="신발03">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">스텔라 쥬얼슈즈</a></p>
+                <p class="product_price"><a href="#!">54,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 white_F2EDED"></p>
+                  <p class="product_color02 skyblue_83D6FF"></p>
+                </div>
+              <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 13</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/shoes04.jpg" alt="신발04">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">톡톡매쉬 샌들</a></p>
+                <p class="product_price"><a href="#!">29,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 black_5B5A5D"></p>
+                  <p class="product_color02 pink_FF7A80"></p>
+                  <p class="product_color03 brown_B97E43"></p>
+                  <p class="product_color03 red_E72718"></p>
+                </div>
+              <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 5</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/shoes05.jpg" alt="신발05">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">플라워데이 슬리온</a></p>
+                <p class="product_price"><a href="#!">24,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 yellow_FFE17E"></p>
+                  <p class="product_color02 pink_FF7A80"></p>
+                  <p class="product_color02 skyblue_83D6FF"></p>
+                </div>
+              <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 3</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/shoes06.jpg" alt="신발06">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">토토슈 운동화</a></p>
+                <p class="product_price"><a href="#!">29,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 white_F2EDED"></p>
+                  <p class="product_color02 black_5B5A5D"></p>
+                </div>
+              <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 4</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/shoes07.jpg" alt="신발07">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">사뿐 실내화</a></p>
+                <p class="product_price"><a href="#!">24,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 white_F2EDED"></p>
+                  <p class="product_color02 brown_B97E43"></p>
+                </div>
+              <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 1</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/shoes08.jpg" alt="신발08">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">딩딩디노 스펀지 샌들</a></p>
+                <p class="product_price"><a href="#!">14,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 pink_FF7A80"></p>
+                  <p class="product_color01 yellow_FFE17E"></p>
+                  <p class="product_color02 skyblue_83D6FF"></p>
+                  <p class="product_color02 green_98DD44"></p>
+                </div>
+              <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 1</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page_btn_outer">
+          <div class="page_btn mb">
+            <a href="#!"><i class="fa-solid fa-chevron-left left_btn"></i></a>
+            <p><a href="#!">1</a></p>
+            <a href="#!"><i class="fa-solid fa-chevron-right right_btn"></i></a>
+          </div>
+          </div>
+          </div>
+          </section>
+
+          <section class="sub_product_all_07">
+            <div class="sub_product_all">
+            <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/accessories01.jpg" alt="악세서리01">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">베베 볼캡</a></p>
+                <p class="product_price"><a href="#!">29,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 white_F2EDED"></p>
+                  <p class="product_color02 yellow_FFE17E"></p>
+                  <p class="product_color02 brown_B97E43"></p>
+                </div>
+              <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 20</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/accessories02.jpg" alt="악세서리02">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">베베 스트립 모자</a></p>
+                <p class="product_price"><a href="#!">30,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 white_F2EDED"></p>
+                  <p class="product_color02 blue_5C6AFD"></p>
+                  <p class="product_color02 pink_FF7A80"></p>
+                </div>
+              <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 12</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/accessories03.jpg" alt="악세서리03">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">마린빕</a></p>
+                <p class="product_price"><a href="#!">14,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 white_F2EDED"></p>
+                  <p class="product_color02 skyblue_83D6FF"></p>
+                  <p class="product_color03 blue_5C6AFD"></p>
+                </div>
+              <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 20</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sub_product">
+            <div class="sub_product_img">   
+              <a href="#!">
+                <img src="./images/accessories04.jpg" alt="악세서리04">
+              </a>
+            </div>
+            <div class="sub_product_info">
+                <p class="product_title"><a href="#!">이지핏 삭스(4p)</a></p>
+                <p class="product_price"><a href="#!">17,900원</a></p>
+                <div class="sub_product_color">
+                  <p class="product_color01 white_F2EDED"></p>
+                  <p class="product_color02 skyblue_83D6FF"></p>
+                  <p class="product_color03 pink_FF7A80"></p>
+                  <p class="product_color04 black_5B5A5D"></p>
+                </div>
+              <div class="sub_product_info_bottom">
+                <p class="product_review">리뷰 3</p>
+                <div class="product_btn">
+                  <p><a href="#!">바로구매</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> -->
+          <div class="page_btn_outer">
+            <div class="page_btn mb">
+              <a href="#!"><i class="fa-solid fa-chevron-left left_btn"></i></a>
+              <p><a href="#!">1</a></p>
+              <a href="#!"><i class="fa-solid fa-chevron-right right_btn"></i></a>
+            </div>
+          </div>
+        </section>
+      </div>
+        
+<!-- ----------footer--------- -->
+  <footer class="footer_outer" id="footer">
+   <div class="footer">
+      <div class="footer_left">
+      <div class="footer_title">BEBE</div>
+      <div class="footer_company">
+        <span>상호 : (주)베베</span>
+        <span>대표 : 정유진</span>
+        <span> 대표전화 : 010.1234.1234</span>
+        <p>팩스 : 02.000.0000</p>
+        <p>주소 : 100425 부산광역시 배구 베베동 베베윅스</p>
+        <p>사업자 등록번호 : 777-77-100042[사업자정보확인]</p>
+        <p>통신 판매업 신고번호 : 제 2026-부산 배구-1004호</p>
+        <span>개인 정보 보호 책임자 : 정유진</span>
+        <span>e-meil : BEBE@wings.com</span>
+      </div>
+    </div>
+    <div class="footer_middle">
+      <div class="footer_title">고객센터</div>
+      <div class="footer_info">
+        <p>070.1351.1351</p>
+        <p>평일 오전 10:00 - 오후 5:00</p>
+        <p>*금요일 - 오후 4:00</p>
+        <p>+입금계좌 정보</p>
+      </div>
+    </div>
+    <div class="footer_right">
+      <div class="footer_title">서비스정보</div>
+      <div class="footer_info">
+        <p><a href="#!">회사소개</a></p>
+        <p><a href="#!">이용약관</a></p>
+        <p><a href="#!">개인정보 처리 방침</a></p>
+        <p><a href="#!">이용안내</a></p>
+      </div>
+    </div>
+   </div>
+  </footer>
+  <aside class="quick_btn">
+    <a href="#!">
+      <img src="./images/quick_chat.jpg" alt="채팅">
+    </a>
+    <a href="#top">
+      <img src="./images/quick_up.jpg" alt="업">
+    </a>
+    <a href="#footer">
+      <img src="./images/quick_down.jpg" alt="다운">
+    </a>
+  </aside>
+<!-- -------------shopping_popup----------- -->
+  <section class="shopping_popup_outer">
+    <div class="shopping_popup">
+     <div class="shopping_popup_top">
+      <p class="popup_title">장바구니</p>
+      <p class="popup_sub_title">총 2개의 상품이 담겨있습니다.</p>
+     </div>
+     <div class="shopping_product">
+      <input type="checkbox" class="shopping_product_check" checked>
+       <button type="button" class="btn_product_delete">
+      <i class="fa-solid fa-xmark"></i></button>
+       <div class="shopping_product_top">
+        <div class="shopping_product_top_left">
+         <a href="#!"><img src="./images/shopping01.jpg" alt="장바구니01"></a>
+        </div>
+        <div class="shopping_product_top_right">
+          <p><a href="#!">피피 바디수트</a></p>
+          <p>18,900원</p>
+          <p>배송 : 무료 / 기본 배송</p>
+        </div>
+       </div>
+       <div class="shopping_product_bottom">
+         <div class="shopping_product_bottom_left">
+          <button class="minus">
+           <i class="fa-solid fa-minus"></i>
+          </button>
+          <p>1</p>
+          <button class="plus">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+         </div>
+         <div class="shopping_product_bottom_right">
+           <p>주문 금액 : 18,900원</p>
+         </div>
+        </div>
+      </div>
+      <div class="shopping_product">
+      <input type="checkbox" class="shopping_product_check" checked>
+        <button type="button" class="btn_product_delete">
+          <i class="fa-solid fa-xmark"></i></button>
+          <div class="shopping_product_top">
+            <div class="shopping_product_top_left">
+              <a href="#!"><img src="./images/shopping02.jpg" alt="장바구니02"></a>
+            </div>
+            <div class="shopping_product_top_right">
+              <p><a href="#!">DREAM-SKY</a></p>
+              <p>58,000원</p>
+              <p>배송 : 무료 / 기본 배송</p>
+            </div>
+          </div>
+          <div class="shopping_product_bottom">
+            <div class="shopping_product_bottom_left">
+              <button class="minus">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              <p>1</p>
+              <button class="plus">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+            <div class="shopping_product_bottom_right">
+              <p>주문 금액 : 58,000원</p>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="shopping_close">
+        <i class="fa-solid fa-xmark"></i>
+        </button>
+      <div class="shopping_popup_bottom">
+        <div class="shopping_total_product_price">
+          <p>총 상품 금액</p>
+          <p>76,900원</p>
+        </div>
+        <div class="shopping_total_delivery_price">
+          <p>총 배송비</p>
+          <p>0원</p>
+        </div>
+        <div class="shopping_total_price">
+          <p>총 결제금액</p>
+          <p>76,900원</p>
+        </div>
+      </div>
+    </div>
+      <button class="shopping_total_delete">전체상품선택</button>
+      <button class="shopping_choose_delete">선택상품삭제</button>
+      <button class="shopping_all_order">전체상품주문</button>
+      <button class="shopping_choose_order">선택상품주문</button>
+  </div>
+  </section>
+<!-- -------------ai_popup----------- -->
+  <!-- <section class="ai_popup_outer">
+    <div class="ai_popup">
+     <div class="ai_popup_top">
+      <p class="popup_title">AI 가상 피팅</p>
+      <p class="popup_sub_title">1단계. 전신 사진을 선택해주세요.</p>
+      <p class="popup_sub_title">2단계. 상품을 선택해주세요.</p>
+     </div>
+      <p class="popup_sub_title">1단계</p>
+     <div class="ai_popup_middle01">
+      <div>
+        <p>전신 사진을 선택해주세요.</p>
+        <img src="./images/review_write_photo.jpg" alt="">
+      </div>
+     </div>
+      <p class="popup_sub_title">2단계</p>
+     <div class="ai_popup_middle02">
+      <div class="ai_popup_search">
+        <input type="search" placeholder="검색어를 입력해주세요">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+      <div class="ai_product">
+        <div class="ai_product01"><a href="#!"><img src="./images/ai01.jpg" alt="ai_img"><p>하늘하늘 탑</p></a></div>
+        <div class="ai_product02"><a href="#!"><img src="./images/ai02.jpg" alt=""><p>블롬샤베트 세트</p></a></div>
+        <div class="ai_product03"><a href="#!"><img src="./images/ai03.jpg" alt=""><p>물개친구 세트</p></a></div>
+      </div>
+     </div>
+     <button type="button" class="ai_popup_close">
+       <i class="fa-solid fa-xmark"></i>
+     </button>
+     <button class="ai_fitting_btn">AI 가상 피팅 시작하기</button>
+    </div>
+  </section> -->
+<!-- -------------search_popup----------- -->
+  <section class="search_popup_outer">
+    <div class="search_popup">
+      <div class="search_popup_top">
+        <div class="search_popup_search">
+          <input type="search" placeholder="검색어를 입력해주세요">
+          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+      </div>
+      <p class="search_popup_subtitle">최근 검색어</p>
+      <div class="search_popup_middle01">
+        <ul class="wrap">
+          <li>
+            <a href="#!">여아</a>
+            <button type="button" class="btn_search_delete">
+             <i class="fa-solid fa-xmark"></i>
+            </button>
+          </li>
+          <li>
+            <a href="#!">원피스</a>
+            <button type="button" class="btn_search_delete">
+             <i class="fa-solid fa-xmark"></i>
+            </button>
+          </li>
+          <li>
+            <a href="#!">바지</a>
+            <button type="button" class="btn_search_delete">
+             <i class="fa-solid fa-xmark"></i>
+            </button>
+          </li>
+          <li>
+            <a href="#!">신발</a>
+            <button type="button" class="btn_search_delete">
+             <i class="fa-solid fa-xmark"></i>
+            </button>
+          </li>
+          <li>
+            <a href="#!">봄</a>
+            <button type="button" class="btn_search_delete">
+             <i class="fa-solid fa-xmark"></i>
+            </button>
+          </li>
+          <li>
+            <a href="#!">신상품</a>
+            <button type="button" class="btn_search_delete">
+             <i class="fa-solid fa-xmark"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <p class="search_popup_subtitle">베베 추천 검색어</p>
+      <div class="search_popup_middle02">
+        <input type="checkbox" name="search_popup_recommend01" id="search_popup_recommend01">
+        <input type="checkbox" name="search_popup_recommend02" id="search_popup_recommend02">
+        <input type="checkbox" name="search_popup_recommend03" id="search_popup_recommend03">
+        <input type="checkbox" name="search_popup_recommend04" id="search_popup_recommend04">
+        <input type="checkbox" name="search_popup_recommend05" id="search_popup_recommend05">
+        <div class="search_popup">
+          <label for="search_popup_recommend01"><a href="#!">집콕룩</a></label>
+          <label for="search_popup_recommend02"><a href="#!">키키티셔츠</a></label>
+          <label for="search_popup_recommend03"><a href="#!">신상</a></label>
+          <label for="search_popup_recommend04"><a href="#!">육아필수템</a></label>
+          <label for="search_popup_recommend05"><a href="#!">모자</a></label>
+        </div>
+      </div>
+      <p class="search_popup_subtitle">인기 검색어</p>
+      <div class="search_popup_middle03">
+        <ul class="search_popular_left">
+          <li><a href="#!">1. 수영복</a></li>
+          <li><a href="#!">2. 여름옷</a></li>
+          <li><a href="#!">3. 모자</a></li>
+          <li><a href="#!">4. 바람막이</a></li>
+          <li><a href="#!">5. 모기장옷</a></li>
+        </ul>
+        <ul class="search_popular_right">
+          <li><a href="#!">6. 바디수트</a></li>
+          <li><a href="#!">7. 턱받이</a></li>
+          <li><a href="#!">8. 필수템</a></li>
+          <li><a href="#!">9. 젤리슈즈</a></li>
+          <li><a href="#!">10. 샌들</a></li>
+        </ul>
+      </div>
+      <p class="search_popup_subtitle">방금 본 상품</p>
+      <div class="search_popup_bottom">
+          <div class="search_product01"><a href="#!"><img src="./images/search01.jpg" alt="search_img"><p>톡톡매쉬 샌들</p></a></div>
+          <div class="search_product02"><a href="#!"><img src="./images/search02.jpg" alt=""><p>플라워 슬리온</p></a></div>
+          <div class="search_product03"><a href="#!"><img src="./images/search03.jpg" alt=""><p>키치드레스</p></a></div>
+      </div>
+      <button type="button" class="search_popup_close">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+  </section>
+</body>
+  </body>
+  </html>
+<!--
+ 쇼핑 <i class="fa-solid fa-bag-shopping"></i>
+ 하트 <i class="fa-regular fa-heart"></i></a>
+ 유저 <i class="fa-regular fa-user"></i>
+     <i class="fa-solid fa-user"></i>
+ 돋보기 <i class="fa-solid fa-magnifying-glass"></i>
+     <i class="fa-brands fa-sistrix"></i>
+ 메뉴 <i class="fa-solid fa-bars"></i>
+-->
