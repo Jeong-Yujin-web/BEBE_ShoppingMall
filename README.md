@@ -11,7 +11,7 @@
 
 프로젝트의 기획 배경과 요구사항, 경쟁사 분석 및 디자인 가이드는 아래 문서에서 확인할 수 있습니다.
 
-👉 [기획안 PDF 보기](docs/BEBE_Responsive%20Project.pdf)
+👉 [BEBE 프로젝트 기획안 보기](./docs/BEBE_ResponsiveProject.pdf)
 
 ## 🖥️ 프로젝트 소개
 
