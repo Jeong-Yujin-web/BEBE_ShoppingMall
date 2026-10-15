@@ -87,6 +87,8 @@ BEBE
 상품명과 가격, 카테고리 등 구매에 필요한 정보를 구분하여 배치하고,
 사용자가 원하는 조건에 맞춰 상품을 선택할 수 있도록 구성하였습니다.
 ```
+https://github.com/user-attachments/assets/caab76c3-4adb-4ef1-a819-200e64781bac
+
 <details>
   <summary>🔍 상품 목록 필터링 및 정렬 기능 코드 펼치기</summary>
   
@@ -212,6 +214,7 @@ BEBE
 JSON 데이터를 활용하여 사용자 정보를 확인하고,
 입력한 아이디와 비밀번호가 일치하는 경우 로그인 성공 메시지를 표시하도록 구성하였습니다.
 ```
+https://github.com/user-attachments/assets/e8eb987c-6967-44e8-895d-4920f2c1a8af
 
 <details>
   <summary>🔍 login.js (로그인 및 아이디 저장 기능) 펼치기</summary>
@@ -325,6 +328,7 @@ JSON 데이터를 활용하여 사용자 정보를 확인하고,
 또한 이메일 도메인 선택과 약관 동의 기능을 구성하여
 사용자가 회원가입에 필요한 정보를 편리하게 입력할 수 있도록 하였습니다.
 ```
+https://github.com/user-attachments/assets/f26271c5-77db-42a2-b6a2-3b196d728f21
 
 <details>
   <summary>🔍 signup.js (회원가입 입력값 검증 및 편의 기능) 펼치기</summary>
@@ -460,6 +464,7 @@ JSON 데이터를 활용하여 사용자 정보를 확인하고,
 또한 작성자 이름 일부를 마스킹하고,
 등록된 문의를 삭제할 수 있도록 구현하였습니다.
 ```
+https://github.com/user-attachments/assets/0acc2d5b-8b06-4237-b8b9-4adaed770da1
 
 <details>
   <summary>🔍 Q&A.js (문의 등록 기능) 펼치기</summary>
