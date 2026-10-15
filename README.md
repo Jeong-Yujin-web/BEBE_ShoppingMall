@@ -1,6 +1,6 @@
 # BEBE_Responsive_Project
 
-BEBE 쇼핑몰 프로젝트
+## BEBE 쇼핑몰 프로젝트
 
 영유아 의류와 육아용품을 판매하는 PC 중심의 쇼핑몰 웹사이트 BEBE를 구현하였습니다.
 
