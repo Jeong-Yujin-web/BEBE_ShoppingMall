@@ -82,54 +82,486 @@ BEBE
 ## ⭐ 주요 구현 내용
 
 ### 01. 상품 옵션 선택 및 탐색 기능
-<details>
-  <summary></summary>
-  ```js
-  ```
-</details>
 ```text
 → 상품을 선택할 때 필요한 옵션을 확인하고 선택할 수 있도록 구현하였습니다.
 
 상품명과 가격, 카테고리 등 구매에 필요한 정보를 구분하여 배치하고,
 사용자가 원하는 조건에 맞춰 상품을 선택할 수 있도록 구성하였습니다.
 ```
+<details>
+  <summary>🔍 상품 목록 필터링 및 정렬 기능 코드 펼치기</summary>
+  
+  ```js
+  import shoppingList from "./data.js";
+
+  const productCount = document.querySelector('.sub_product_solt p');
+  const bestProduct = document.querySelector('.best_product_all');
+  const subTitleTab = document.querySelectorAll('.option_title label');
+  const optionList = document.querySelector('#option_list');
+
+  // 현재 선택된 카테고리와 정렬 조건
+  let currentCategory = '전체';
+  let currentSort = 'default';
+
+  function showProduct(productList) {
+    bestProduct.innerHTML = '';
+
+    productList.forEach(function(product) {
+      const bestDiv = document.createElement('div');
+      bestDiv.classList.add('best_box');
+
+      bestDiv.addEventListener('click', function() {
+        location.href = 'shopping_detail.html';
+      });
+
+      const bestImgBox = document.createElement('div');
+      bestImgBox.classList.add('best_img');
+
+      const bestImg = document.createElement('img');
+      bestImg.src = product.src;
+      bestImg.alt = product.name;
+
+      bestImgBox.appendChild(bestImg);
+      bestDiv.appendChild(bestImgBox);
+
+      const bestNameP = document.createElement('p');
+      bestNameP.textContent = product.name;
+      bestDiv.appendChild(bestNameP);
+
+      const bestPriceP = document.createElement('p');
+      bestPriceP.textContent =
+        product.price.toLocaleString() + '원';
+      bestPriceP.classList.add('price');
+      bestDiv.appendChild(bestPriceP);
+
+      bestProduct.appendChild(bestDiv);
+    });
+  }
+
+  // 카테고리 필터링 및 상품 정렬
+  function renderProducts() {
+    let result = [...shoppingList];
+
+    // 전체 카테고리에서 중복 상품 제거
+    if (currentCategory === '전체') {
+      result = result.filter(function(product, index, array) {
+        return index === array.findIndex(function(item) {
+          return item.name === product.name;
+        });
+      });
+    }
+
+    if (currentCategory !== '전체') {
+      result = result.filter(function(product) {
+        return product.category === currentCategory;
+      });
+    }
+
+    if (currentSort === 'low') {
+      result.sort((a, b) => a.price - b.price);
+    } else if (currentSort === 'high') {
+      result.sort((a, b) => b.price - a.price);
+    } else if (currentSort === 'latest') {
+      result.sort((a, b) =>
+        new Date(b.date) - new Date(a.date)
+      );
+    } else if (currentSort === 'popular') {
+      result.sort((a, b) => b.review - a.review);
+    }
+
+    productCount.textContent = `전체상품 ${result.length}개`;
+    showProduct(result);
+  }
+
+  // 페이지 초기 상품 출력
+  renderProducts();
+
+  subTitleTab.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      currentCategory = this.textContent.trim();
+
+      subTitleTab.forEach(function(tab) {
+        tab.classList.remove('on_tab');
+      });
+
+      this.classList.add('on_tab');
+      renderProducts();
+    });
+  });
+
+  optionList.addEventListener('change', function() {
+    currentSort = this.value;
+    renderProducts();
+  });
+  ```
+
+</details>
 
 #### 💡 셀프 코드리뷰 & 배운 점
 
-- **상품 옵션 선택 기능 구현**: 상품을 구매하기 전 필요한 옵션을 선택할 수 있도록 구성하면서 사용자 입력에 따라 화면을 제어하는 방법을 익혔습니다.
-- **상품 정보의 직관적인 구성**: 상품명과 가격, 옵션 등 구매에 필요한 정보를 구분하여 배치하고 사용자가 필요한 내용을 쉽게 확인할 수 있도록 고민하였습니다.
-- **앞으로의 보완점**: 옵션 선택에 따른 가격과 재고 등 상품 정보의 변화를 함께 관리하고, 선택하지 않은 옵션이 있을 때의 예외 처리까지 고려하여 구매 과정의 완성도를 높이고 싶습니다.
+- **상품 목록 출력 기능 구현**: JavaScript를 활용해 상품 데이터를 화면에 동적으로 출력하고, 상품명과 가격, 이미지를 구성하였습니다.
+- **카테고리 필터링 및 정렬**: 카테고리별 상품 필터링과 가격순, 최신순, 인기순 정렬 기능을 구현하여 원하는 상품을 쉽게 탐색할 수 있도록 하였습니다.
+- **앞으로의 보완점**: 상품별 고유 코드를 활용한 상세 페이지 연결과 필터링 및 정렬 조건에 따른 예외 처리를 보완하고 싶습니다.
 
 ### 02. 로그인 기능
 
 ```text
-→ 사용자가 로그인 페이지에서 계정 정보를 입력하고 회원가입, 아이디 찾기, 비밀번호 찾기가 가능하도록 페이지를 구현하였습니다.
+02. 로그인 기능
+→ 사용자가 로그인 페이지에서 계정 정보를 입력하고,
+아이디 저장 및 로그인 여부를 확인할 수 있도록 구현하였습니다.
 
-로그인에 필요한 입력 요소를 구분하고,
-사용자가 기능을 쉽게 이해하고 이용할 수 있도록 화면을 구성하였습니다.
+JSON 데이터를 활용하여 사용자 정보를 확인하고,
+입력한 아이디와 비밀번호가 일치하는 경우 로그인 성공 메시지를 표시하도록 구성하였습니다.
 ```
+
+<details>
+  <summary>🔍 login.js (로그인 및 아이디 저장 기능) 펼치기</summary>
+    
+  ```js
+  document.addEventListener('DOMContentLoaded', function() {
+
+    // 아이디 저장 여부 확인
+    let cookieId = getCookie("key");
+
+    if (cookieId != '') {
+      $("#userId").val(cookieId);
+      $("#id_save").prop("checked", true);
+    }
+
+    // 쿠키 가져오기
+    function getCookie(key) {
+      key = key + "=";
+
+      let cookieData = document.cookie;
+      let firstCookie = cookieData.indexOf(key);
+      let cookieValue = "";
+
+      if (firstCookie != -1) {
+        firstCookie += key.length;
+
+        let endCookie = cookieData.indexOf(';', firstCookie);
+
+        if (endCookie == -1) {
+          endCookie = cookieData.length;
+        }
+
+        cookieValue = cookieData.substring(firstCookie, endCookie);
+      }
+
+      return decodeURIComponent(cookieValue);
+    }
+
+    // 쿠키 저장
+    function setCookie(key, value, day) {
+      let currentTime = new Date();
+      currentTime.setDate(currentTime.getDate() + day);
+
+      let cookieValue =
+        encodeURIComponent(value) +
+        ";expires=" +
+        currentTime.toGMTString();
+
+      document.cookie = key + "=" + cookieValue;
+    }
+
+    // 쿠키 삭제
+    function deleteCookie(key) {
+      let currentTime = new Date();
+      currentTime.setDate(currentTime.getDate() - 1);
+
+      document.cookie =
+        key + "=;expires=" +
+        currentTime.toGMTString();
+    }
+
+    fetch('../js/users.json')
+      .then(response => response.json())
+      .then(userList => {
+
+        $('.submit').click(function() {
+
+          // 아이디 저장 설정
+          if ($("#id_save").is(":checked")) {
+            setCookie("key", $("#userId").val(), 3);
+          } else {
+            deleteCookie("key");
+          }
+
+          const userId = $("#userId").val();
+          const userPw = $("#userPw").val();
+
+          const user = userList.find(function(user) {
+            return user.id === userId && user.pw === userPw;
+          });
+
+          if (user) {
+            alert(`${user.name}님 로그인 성공`);
+            location.href = "../index.html";
+          } else {
+            alert("아이디 또는 비밀번호가 틀렸습니다.");
+          }
+
+        });
+
+      })
+      .catch(error => {
+        console.error("사용자 데이터를 불러오지 못했습니다.", error);
+      });
+  });
+  ```
+
+</details>
 
 #### 💡 셀프 코드리뷰 & 배운 점
 
-- **로그인 화면 구현**: 아이디와 비밀번호 입력 영역 및 관련 메뉴를 구성하면서 사용자 입력을 처리하는 기본적인 흐름을 익혔습니다.
+- **로그인 화면 구현**: JSON에 저장된 사용자 데이터를 불러오고, 아이디와 비밀번호 입력 영역 및 관련 메뉴를 구성하면서 사용자 입력을 처리하는 기본적인 흐름을 익혔습니다.
 - **사용자 편의성 고려**: 로그인과 회원가입, 아이디 및 비밀번호 찾기 등 관련 기능으로 이동할 수 있도록 구성하여 접근성을 높이고자 하였습니다.
-- **앞으로의 보완점**: 실제 서비스에서는 입력값 검증과 로그인 실패 안내, 비밀번호 보안 및 서버 인증 과정을 함께 고려하여 로그인 기능을 개선하고 싶습니다.
-- 
-### 03. 상품 문의(Q&A) 기능
+- **앞으로의 보완점**: 실제 서비스에서는 입력값 검증과 로그인 실패 안내를 보완하고, 실제 서비스에서는 서버 인증과 비밀번호 보안 처리를 적용하고 싶습니다.
+
+### 03. 회원가입 기능
+```text
+→ 회원가입에 필요한 사용자 정보 입력과 비밀번호 확인,
+전화번호 입력 및 주소 검색 기능을 구현하였습니다.
+
+또한 이메일 도메인 선택과 약관 동의 기능을 구성하여
+사용자가 회원가입에 필요한 정보를 편리하게 입력할 수 있도록 하였습니다.
+```
+
+<details>
+  <summary>🔍 signup.js (회원가입 입력값 검증 및 편의 기능) 펼치기</summary>
+  
+```js
+  document.addEventListener('DOMContentLoaded', function() {
+
+    const userId = document.getElementById('user_id');
+    const userPw1 = document.getElementById('user_pw1');
+    const userPw2 = document.getElementById('user_pw2');
+    const btnPw = document.querySelector('.btn_pw');
+    const telSecond = document.getElementById('tel_second');
+    const telThird = document.getElementById('tel_third');
+
+    // 아이디 및 비밀번호 입력 확인
+    userId.addEventListener('change', checkId);
+    userPw1.addEventListener('change', checkPw);
+    btnPw.addEventListener('click', comparePw);
+    telSecond.addEventListener('keyup', moveTel);
+
+    // 아이디 길이 확인
+    function checkId() {
+      if (userId.value.length < 5 || userId.value.length > 16) {
+        alert('사용할 수 없는 아이디입니다.');
+        userId.value = '';
+        userId.focus();
+      }
+    }
+
+    // 비밀번호 길이 확인
+    function checkPw() {
+      if (userPw1.value.length > 16 && userPw1.value.length < 5) {
+        alert('사용할 수 없는 비밀번호입니다.');
+        userPw1.select();
+      }
+    }
+
+    // 비밀번호 일치 여부 확인
+    function comparePw() {
+      if (userPw1.value !== userPw2.value) {
+        alert('비밀번호가 일치하지 않습니다.');
+      } else {
+        alert('비밀번호가 일치합니다.');
+      }
+    }
+
+    // 전화번호 입력 시 다음 입력란으로 이동
+    function moveTel() {
+      if (telSecond.value.length >= 4) {
+        telThird.focus();
+      }
+    }
+
+    // 주소 검색
+    document.getElementById('btn_search_address')
+      .addEventListener('click', searchAddress);
+
+    function searchAddress() {
+      new kakao.Postcode({
+        oncomplete: function(data) {
+          document.getElementById('userAddress').value = data.address;
+          document.getElementById('userPostCode').value = data.zonecode;
+
+          const inputDtlAddr =
+            document.getElementById('userDtlAddress');
+
+          inputDtlAddr.readOnly = false;
+        }
+      }).open();
+    }
+
+    // 이메일 도메인 선택
+    const domain = document.querySelector('.domain');
+    const domainSpace = document.querySelector('.domain_space');
+
+    domain.addEventListener('change', () => {
+      domainSpace.value = domain.value;
+    });
+
+    // 약관 전체 동의 및 개별 동의
+    const totalTerms = document.getElementById('total_terms');
+    const termsEls = document.querySelectorAll('.terms_el');
+
+    const terms01 = document.getElementById('terms_01');
+    const terms02 = document.getElementById('terms_02');
+    const terms03 = document.getElementById('terms_03');
+    const terms04 = document.getElementById('terms_04');
+    const terms05 = document.getElementById('terms_05');
+
+    totalTerms.addEventListener('click', totalCheck);
+    terms01.addEventListener('click', termsCheck);
+    terms02.addEventListener('click', termsCheck);
+    terms03.addEventListener('click', termsCheck);
+    terms04.addEventListener('click', termsCheck);
+    terms05.addEventListener('click', termsCheck);
+
+    // 전체 약관 동의
+    function totalCheck() {
+      termsEls.forEach((termsEl) => {
+        termsEl.checked = totalTerms.checked;
+      });
+    }
+
+    // 개별 약관 동의 상태 확인
+    function termsCheck() {
+      totalTerms.checked =
+        terms01.checked &&
+        terms02.checked &&
+        terms03.checked &&
+        terms04.checked &&
+        terms05.checked;
+    }
+
+  });
+```
+
+</details>
+
+#### 💡 셀프 코드리뷰 & 배운 점
+
+- **입력값 검증**: 아이디 길이 확인과 비밀번호 일치 여부 확인 기능을 구현하여 입력값을 검증하는 방법을 익혔습니다.
+- **사용자 편의 기능**: 전화번호 입력란 자동 이동, 주소 검색, 이메일 도메인 선택 및 약관 전체 동의 기능을 구현하였습니다.
+- **앞으로의 보완점**: 비밀번호 길이 검증 조건을 수정하고, 필수 입력값 확인과 중복 아이디 검사, 실제 회원 정보 저장 기능 등을 보완하고 싶습니다.
+
+### 04. 상품 문의(Q&A) 기능
 
 ```text
-→ 상품에 대한 문의를 확인하고 작성할 수 있도록 Q&A 영역을 구성하였습니다.
+→ 상품 상세 페이지에서 문의 내용을 작성하고 등록할 수 있도록 구현하였습니다.
 
-상품 정보뿐만 아니라 구매 전 궁금한 사항을 확인할 수 있도록
-문의 관련 콘텐츠를 제공하여 구매 과정에서 필요한 정보를 보완하였습니다.
+문의 제목, 작성자, 문의 내용의 입력 여부를 확인하고,
+등록된 문의는 작성 날짜와 함께 목록 상단에 표시되도록 구성하였습니다.
+
+또한 작성자 이름 일부를 마스킹하고,
+등록된 문의를 삭제할 수 있도록 구현하였습니다.
 ```
+
+<details>
+  <summary>🔍 Q&A.js (문의 등록 기능) 펼치기</summary>
+  
+  ```js
+  document.addEventListener('DOMContentLoaded', function() {
+
+    const QnASubmit = document.querySelector('.QnA_submit');
+
+    QnASubmit.addEventListener('click', () => {
+      const QnATitle = document.querySelector('.QnA_title');
+      const QnAName = document.querySelector('.user_name');
+      const QnA = document.querySelector('.QnA');
+      const QnAList = document.querySelector('.QnA_list');
+
+      // 필수 입력값 확인
+      if (!QnATitle.value) {
+        alert('문의사항 제목을 작성하셔야 등록이 가능합니다.');
+        QnATitle.focus();
+        return;
+      }
+
+      if (!QnAName.value) {
+        alert('작성자를 입력하셔야 등록이 가능합니다.');
+        QnAName.focus();
+        return;
+      }
+
+      if (!QnA.value) {
+        alert('문의사항 내용을 작성하셔야 등록이 가능합니다.');
+        QnA.focus();
+        return;
+      }
+
+      // 문의 항목 생성
+      const newItem = document.createElement('div');
+
+      const newTitle = document.createElement('p');
+      newTitle.textContent = QnATitle.value;
+
+      // 작성자 이름 마스킹
+      const newName = document.createElement('p');
+      const name = QnAName.value;
+      newName.textContent = name[0] + '*'.repeat(name.length - 1);
+
+      // 작성 날짜 표시
+      const newDate = document.createElement('p');
+      newDate.textContent = remaindTime();
+
+      const newP = document.createElement('p');
+      newP.textContent = QnA.value;
+
+      // 문의 삭제 버튼
+      const newSpan = document.createElement('span');
+      newSpan.textContent = 'x';
+      newSpan.classList.add('delete');
+
+      newP.appendChild(newSpan);
+      newItem.appendChild(newTitle);
+      newItem.appendChild(newName);
+      newItem.appendChild(newDate);
+      newItem.appendChild(newP);
+
+      // 최신 문의를 목록 상단에 추가
+      QnAList.insertBefore(newItem, QnAList.firstChild);
+
+      // 입력값 초기화
+      QnATitle.value = '';
+      QnAName.value = '';
+      QnA.value = '';
+      QnATitle.focus();
+
+      // 문의 삭제
+      newSpan.addEventListener('click', () => {
+        newItem.remove();
+      });
+    });
+
+    // 현재 날짜 및 시간 반환
+    function remaindTime() {
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const day = String(now.getDate()).padStart(2, '0');
+      const hour = String(now.getHours()).padStart(2, '0');
+      const minute = String(now.getMinutes()).padStart(2, '0');
+
+      return `${year}.${month}.${day} ${hour}:${minute}`;
+    }
+
+  });
+  ```
+
+</details>
 
 #### 💡 셀프 코드리뷰 & 배운 점
 
-- **문의 기능 구현**: 상품 문의 영역을 구성하면서 쇼핑몰에서 상품 정보 외에도 사용자와 판매자 간의 정보 전달이 중요하다는 점을 배웠습니다.
-- **정보 구조 설계**: 상품 정보와 문의 콘텐츠를 구분하여 배치하고 사용자가 필요한 정보를 쉽게 문의 할 수 있도록 구성하였습니다.
-- **앞으로의 보완점**: 문의 작성과 목록 조회, 답변 상태 표시 등 기능별 동작을 명확하게 구분하고 입력값 검증 및 예외 처리를 보완하고 싶습니다.
-- 
+- **문의 목록 관리**: JavaScript로 문의 항목을 동적으로 생성하고, 작성 날짜 표시와 등록 항목 삭제 기능을 구현하였습니다.
+- **입력값 정보 검증**: 문의 제목, 작성자, 문의 내용의 필수 입력 여부를 확인하여 누락된 정보가 있을 때 등록을 제한하였습니다.
+- **앞으로의 보완점**: 작성자 이름 마스킹을 적용하였으며, 향후 서버와 연동하여 문의 데이터를 저장하고 새로고침 후에도 유지되도록 개선하고 싶습니다.
+
 
 ## 🖥️ 실행 결과
 
@@ -147,7 +579,7 @@ BEBE
 
 ---
 ### GitHub
-
+https://github.com/Jeong-Yujin-web/BEBE_ShoppingMall.git
 
 ### 회고
 
