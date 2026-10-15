@@ -579,7 +579,7 @@ JSON 데이터를 활용하여 사용자 정보를 확인하고,
 
 ---
 ### GitHub
-https://github.com/Jeong-Yujin-web/BEBE_ShoppingMall.git
+https://dbwls9379.dothome.co.kr/
 
 ### 회고
 
