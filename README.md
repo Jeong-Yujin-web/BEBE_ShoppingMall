@@ -93,7 +93,7 @@ BEBE
 
 ## ⭐ 주요 구현 내용
 
-### 01. 상품 옵션 선택 및 탐색 기능
+#### 01. 상품 옵션 선택 및 탐색 기능
 ```text
 → 상품을 선택할 때 필요한 옵션을 확인하고 선택할 수 있도록 구현하였습니다.
 
@@ -102,6 +102,16 @@ BEBE
 ```
 https://github.com/user-attachments/assets/caab76c3-4adb-4ef1-a819-200e64781bac
 
+<br><br>
+
+### 💡 셀프 코드리뷰
+  * 스프레드 문법(`...`)으로 원본 상품 배열유지
+  * 비교 함수의 반환값(음수·양수)을 활용, (sort())정렬
+  * filter() + findIndex()를 활용한 전체 상품 중복 제거 (상품명 기준)
+    
+  ##### ✅ 만약 중복된 상품을 제외할 때 작성해둔 아이디를 활용한다면 더욱 정확하게 정보를 필터링할 수 있을 것 같습니다.
+  
+<br><br>
 <details>
   <summary>🔍 상품 목록 필터링 및 정렬 기능 코드 펼치기</summary>
   
@@ -208,17 +218,12 @@ https://github.com/user-attachments/assets/caab76c3-4adb-4ef1-a819-200e64781bac
     renderProducts();
   });
   ```
-
 </details>
-
-#### 💡 셀프 코드리뷰 & 배운 점
-* * **문의 목록 관리**: 상품이 카테고리별로 또 select option별로 필터링이 두번 다 적용돼야 하기 때문에 let currentCategory = '전체'; 로 카테고리를 결정하는 기준을,  let currentSort = 'default';로 상품 정렬 기준을 결정하는 역할을 지정하였습니다. 이것을 let result 배열로 받아서 if문을 통해 조건을 제시하고 조건에 맞는 상품을 정렬하여 보이도록 하였습니다.
-
-
-### 02. 로그인 기능
+<br><br>
+  
+#### 02. 로그인 기능
 
 ```text
-02. 로그인 기능
 → 사용자가 로그인 페이지에서 계정 정보를 입력하고,
 아이디 저장 및 로그인 여부를 확인할 수 있도록 구현하였습니다.
 
@@ -226,6 +231,16 @@ JSON 데이터를 활용하여 사용자 정보를 확인하고,
 입력한 아이디와 비밀번호가 일치하는 경우 로그인 성공 메시지를 표시하도록 구성하였습니다.
 ```
 https://github.com/user-attachments/assets/e8eb987c-6967-44e8-895d-4920f2c1a8af
+
+<br><br>
+
+### 💡 셀프 코드리뷰
+  * fetch로 데이터 json호출
+  * 쿠키(getCookie())를 활용한 저장 아이디 호출
+    
+  ##### ✅ 쿠키 생성 및 삭제 시 `path` 설정을 통일해 쿠키 관리의 정확성 개선해야 할 것 같습니다.
+  
+<br><br>
 
 <details>
   <summary>🔍 login.js (로그인 및 아이디 저장 기능) 펼치기</summary>
@@ -325,11 +340,7 @@ https://github.com/user-attachments/assets/e8eb987c-6967-44e8-895d-4920f2c1a8af
 
 </details>
 
-#### 💡 셀프 코드리뷰 & 배운 점
-
-
-
-### 03. 회원가입 기능
+#### 03. 회원가입 기능
 ```text
 → 회원가입에 필요한 사용자 정보 입력과 비밀번호 확인,
 전화번호 입력 및 주소 검색 기능을 구현하였습니다.
@@ -338,6 +349,16 @@ https://github.com/user-attachments/assets/e8eb987c-6967-44e8-895d-4920f2c1a8af
 사용자가 회원가입에 필요한 정보를 편리하게 입력할 수 있도록 하였습니다.
 ```
 https://github.com/user-attachments/assets/f26271c5-77db-42a2-b6a2-3b196d728f21
+
+<br><br>
+
+### 💡 셀프 코드리뷰
+  * 전체 선택과 개별 체크박스 상태 연동 - 약관 동의 기능 구현
+  * 카카오 우편번호 API - 주소 검색 및 우편번호 자동 입력 기능 구현
+    
+  ##### ✅ 필수 입력값(Required Fields) 검증 및 빈 값 제출 방지 로직 보완하고 싶습니다.
+  
+<br><br>
 
 <details>
   <summary>🔍 signup.js (회원가입 입력값 검증 및 편의 기능) 펼치기</summary>
@@ -369,7 +390,7 @@ https://github.com/user-attachments/assets/f26271c5-77db-42a2-b6a2-3b196d728f21
 
     // 비밀번호 길이 확인
     function checkPw() {
-      if (userPw1.value.length > 16 && userPw1.value.length < 5) {
+      if (userPw1.value.length > 16 || userPw1.value.length < 5) {
         alert('사용할 수 없는 비밀번호입니다.');
         userPw1.select();
       }
@@ -456,11 +477,7 @@ https://github.com/user-attachments/assets/f26271c5-77db-42a2-b6a2-3b196d728f21
 
 </details>
 
-#### 💡 셀프 코드리뷰 & 배운 점
-
-
-
-### 04. 상품 문의(Q&A) 기능
+#### 04. 상품 문의(Q&A) 기능
 
 ```text
 → 상품 상세 페이지에서 문의 내용을 작성하고 등록할 수 있도록 구현하였습니다.
@@ -472,6 +489,16 @@ https://github.com/user-attachments/assets/f26271c5-77db-42a2-b6a2-3b196d728f21
 등록된 문의를 삭제할 수 있도록 구현하였습니다.
 ```
 https://github.com/user-attachments/assets/0acc2d5b-8b06-4237-b8b9-4adaed770da1
+
+<br><br>
+
+### 💡 셀프 코드리뷰
+  * insertBefore() - 최신 문의를 목록 상단에 표시, 삭제 이벤트 구현
+  * appendChild() - 문의 항목의 동적 생성 및 DOM 요소 구성
+    
+  ##### ✅ `localStorage`를 활용해 문의 데이터를 저장하고, 페이지 새로고침 후에도 데이터가 유지되도록 개선해보고 싶습니다.
+  
+<br><br>
 
 <details>
   <summary>🔍 Q&A.js (문의 등록 기능) 펼치기</summary>
@@ -566,11 +593,6 @@ https://github.com/user-attachments/assets/0acc2d5b-8b06-4237-b8b9-4adaed770da1
   ```
 
 </details>
-
-#### 💡 셀프 코드리뷰 & 배운 점
-
-
-
 
 ## 🖥️ 실행 결과
 
