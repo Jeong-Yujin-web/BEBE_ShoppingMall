@@ -237,7 +237,6 @@ JSON 데이터를 활용하여 사용자 정보를 확인하고,
 ```
 https://github.com/user-attachments/assets/e8eb987c-6967-44e8-895d-4920f2c1a8af
 
-<br><br>
 
 ### 💡 셀프 코드리뷰
   * fetch로 데이터 json호출
@@ -345,6 +344,8 @@ https://github.com/user-attachments/assets/e8eb987c-6967-44e8-895d-4920f2c1a8af
 
 </details>
 
+<br><br>
+
 #### 03. 회원가입 기능
 ```text
 → 회원가입에 필요한 사용자 정보 입력과 비밀번호 확인,
@@ -355,7 +356,6 @@ https://github.com/user-attachments/assets/e8eb987c-6967-44e8-895d-4920f2c1a8af
 ```
 https://github.com/user-attachments/assets/f26271c5-77db-42a2-b6a2-3b196d728f21
 
-<br><br>
 
 ### 💡 셀프 코드리뷰
   * 전체 선택과 개별 체크박스 상태 연동 - 약관 동의 기능 구현
@@ -482,6 +482,8 @@ https://github.com/user-attachments/assets/f26271c5-77db-42a2-b6a2-3b196d728f21
 
 </details>
 
+<br><br>
+
 #### 04. 상품 문의(Q&A) 기능
 
 ```text
@@ -495,7 +497,6 @@ https://github.com/user-attachments/assets/f26271c5-77db-42a2-b6a2-3b196d728f21
 ```
 https://github.com/user-attachments/assets/0acc2d5b-8b06-4237-b8b9-4adaed770da1
 
-<br><br>
 
 ### 💡 셀프 코드리뷰
   * insertBefore() - 최신 문의를 목록 상단에 표시, 삭제 이벤트 구현
@@ -598,6 +599,8 @@ https://github.com/user-attachments/assets/0acc2d5b-8b06-4237-b8b9-4adaed770da1
   ```
 
 </details>
+
+<br><br>
 
 ## 🖥️ 실행 결과
 
